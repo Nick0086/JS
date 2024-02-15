@@ -1,0 +1,51 @@
+<script type="text/javascript">
+	var  n1,n2,i;
+
+	n1=parseInt(n1=prompt("Enter a number first number:"));
+	n2=parseInt(n2=prompt("Enter a number second number:"));
+
+	if(n1<n2){
+		if(n1%2==1){
+			for(i=n1;i<=n2;i++){
+				if(i%2==1){
+					document.write(i + " is odd number");
+				}
+				if(i%2==0){
+					document.write(i + " is even number<br>");
+				}
+			}
+		}
+		else{
+			for(i=n1;i<=n2;i++){
+				if(i%2==0){
+					document.write(i + " is even number");
+				}
+				if(i%2==1){
+					document.write(i + " is odd number<br>");
+				}
+			}
+		}
+	}
+	 else{
+		if(n2%2==1){
+			for(i=n2;i<=n1;i++){
+				if(i%2==1){
+					document.write(i + " is odd number");
+				}
+				if(i%2==0){
+					document.write(i + " is even number<br>");
+				}
+			}
+		}
+		else{
+			for(i=n2;i<=n1;i++){
+				if(i%2==0){
+					document.write(i + " is even number");
+				}
+				if(i%2==1){
+					document.write(i + " is odd number<br>");
+				}
+			}
+		}
+	}
+</script>

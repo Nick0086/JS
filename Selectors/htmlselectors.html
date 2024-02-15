@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML Selectors</title>
+
+	<script type="text/javascript">
+		
+		// this link work only if write in last of body
+		// document.getElementById('title').innertText="hello.......!"
+
+		// this function on reload of windows
+		// window.onload=function () {
+		// 	document.getElementById('title').innerText="hello.......!";
+		// }
+
+		function txt () {
+
+			var x =document.getElementById('title')
+
+			// innertext use for chage of text 
+			x.innerText="hello.......!";
+
+			// innerhtml use for chage text and tags both
+			x.innerHTML="<u>hello.......!</u>"
+			x.style.fontSize="40px"
+			x.style.color="blue"
+
+			var y=document.getElementsByTagName('li')
+
+			// y[0].style.color="blue"
+			// y[1].style.color="blue"
+			// y[2].style.color="blue"
+			// y[3].style.color="blue"
+			// y[4].style.color="blue"
+
+			var z=document.getElementsByClassName('list')			
+
+			for (var i = 0; i < z.length; i++) {
+				z[i].style.color="blue"
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+
+	<h1 id=title>Hello world</h1>
+
+	<ul>
+		<li class="list">list item..</li>
+		<li class="list">list item..</li>
+		<li class="list">list item..</li>
+		<li class="list">list item..</li>
+		<li class="list">list item..</li>
+	</ul>
+
+	<button onclick="txt()">click</button>
+
+</body>
+</html>

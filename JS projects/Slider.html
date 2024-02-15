@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <style>
+        .imgslider{
+            width: 100%;
+        }
+
+        .sliderbtn{
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .btn{
+            margin: 0px 6px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+     
+    <div class="slider-body">
+        <img src="Image/sliderimag1.jpg" class="imgslider" alt="img1"> 
+        <img src="Image/sliderimag2.webp" class="imgslider" alt="img1">
+        <img src="Image/sliderimag3.webp" class="imgslider" alt="img1">
+        <img src="Image/sliderimag4.webp" class="imgslider" alt="img1">
+        <img src="Image/sliderimag5.webp" class="imgslider" alt="img1">
+    </div>
+    <div class="sliderbtn">
+        <button class="btn prewbtn" onclick="prew()">Prew</button>
+        <button class="btn nextbtn" onclick="next()">Next</button>
+    </div>
+
+
+    <script>
+
+        var sliderimg = document.getElementsByClassName('imgslider')
+        var imghight = document.getElementsByClassName('imgslider')
+        var  c = 0;
+
+        sliderstart()
+
+        function sliderstart() {
+
+            for(i=0; i<sliderimg.length; i++){
+                sliderimg[i].style.display = 'none';
+            }
+
+            sliderimg[c].style.display = 'block';
+        }
+
+        function prew() {
+            c--
+
+            if(c < 0){
+                c = sliderimg.length - 1;
+            }
+            sliderstart()
+        }
+
+        function next() {
+            c++
+
+            if(c > sliderimg.length - 1){
+                c = 0;
+            }
+            sliderstart()
+        }
+
+        setInterval(function(){
+            next()
+        },2000)
+        
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counterbody">
+        <h1 id="count"></h1>
+        <button onclick="startconnt()">Start</button>
+        <button onclick="stopcount()">Stop</button>
+        <button onclick="reset()">reset</button>
+    </div>
+
+    <script>
+        var cnt = 0;
+        var counter;
+
+        if(localStorage.getItem('counter') != null){
+            cnt = localStorage.getItem('counter');
+        }
+
+        document.getElementById('count').innerText = cnt;
+
+        function startconnt() {
+            counter = setInterval(function () {
+                cnt++
+                document.getElementById('count').innerText = cnt;
+            }, 10);
+        }
+
+        function stopcount() {
+            localstor();
+            clearInterval(counter);
+        }
+
+        function reset() {
+            stopcount()
+            cnt = 0
+            document.getElementById('count').innerText = cnt;
+        }
+
+        function localstor() {
+            localStorage.setItem('counter', cnt);
+        }
+    </script>
+</body>
+
+</html>

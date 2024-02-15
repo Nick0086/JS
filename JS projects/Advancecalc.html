@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .calculatorbody {
+            width: 350px;
+            box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .display {
+            width: 100%;
+            box-sizing: border-box;
+            height: 80px;
+            background-color: #000;
+            border: 1px solid #ffffff50 !important;
+            color: #ffffff;
+            text-align: end;
+            font-size: 24px;
+        }
+
+        .display:focus {
+            outline: none;
+        }
+
+        .calculatorbutton {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .btn-deg {
+            width: 25%;
+            height: 60px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.95);
+            color: #ffffff;
+            border: 1px solid #ffffff50 !important;
+            font-size: 20px;
+            transition: 0.2s ease-in;
+        }
+
+        .btn-deg:hover {
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        .btn-c {
+            color: orange;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .btn-t {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculatorbody">
+        <input type="text" readonly class="display" id="display">
+        <div class="calculatorbutton">
+            <input type="button" value="C" class="btn-deg btn-c" onclick="clearDisplay()">
+            <input type="button" value="DEL" class="btn-deg btn-c" onclick="del()">
+            <input type="button" value="%" class="btn-deg btn-c" onclick="per()">
+            <input type="button" value="/" class="btn-deg btn-c" onclick="appendToDisplay(this.value),oprea()">
+            <input type="button" value="7" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="8" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="9" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="*" class="btn-deg btn-c" onclick="appendToDisplay(this.value),oprea()">
+            <input type="button" value="4" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="5" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="6" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="-" class="btn-deg btn-c" onclick="appendToDisplay(this.value),oprea()">
+            <input type="button" value="1" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="2" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="3" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="+" class="btn-deg btn-c" onclick="appendToDisplay(this.value),oprea()">
+            <input type="button" value="0" class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="." class="btn-deg" onclick="appendToDisplay(this.value)">
+            <input type="button" value="=" class="btn-deg w-50 btn-t" onclick="calculateResult()">
+        </div>
+    </div>
+
+    <script>
+
+        var display = document.getElementById('display');
+
+        function appendToDisplay(value) {
+            display.value += value;
+
+            if (display.value.charAt(0) == 0) {
+                display.value = display.value.charAt(1);
+            }
+        }
+
+
+        function oprea() {
+
+            var a = display.value.charAt(display.value.length - 2)
+            var b = display.value.charAt(display.value.length - 1)
+
+            var o = ['+', '-', '*', '/'];
+
+            for (i = 0; i < o.length; i++) {
+                for (j = 0; j < o.length; j++) {
+                    if (a == o[i] && b == o[j]) {
+                        display.value = display.value.substring(0, display.value.length - 1)
+                    }
+                }
+            }
+        }
+
+
+        function clearDisplay() {
+            display.value = display.value.length = 0;
+        }
+
+        function per() {
+            display.value = eval(display.value) / 100;
+
+        }
+
+        function del() {
+            display.value = display.value.substring(0, display.value.length - 1)
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Age Calculater</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dbe9ff;
+            font-family: 'Playpen Sans', cursive;
+            background-color: #111827;
+            color: white;
+        }
+
+        .calculator-body {
+            border: 2px solid deepskyblue;
+            padding: 40px;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 40%;
+        }
+
+        .age-input-form {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            margin: 24px auto;
+        }
+
+        .input-area {
+            width: calc(100%)
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        .input-box {
+            width: 100%;
+            border: 2px solid deepskyblue;
+            height: 48px;
+            border-radius: 7px;
+            padding: 8px;
+            margin-top: 4px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        ::placeholder {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        button {
+            font-family: inherit;
+            border: 2px solid deepskyblue;
+            background: deepskyblue;
+            color: white;
+            font-size: 18px;
+            font-weight: bolder;
+            border-radius: 7px;
+            padding: 8px 16px;
+            margin-top: 16px;
+            box-shadow: 0 0 12px 1px rgba(0, 121, 255, 0.4);
+            cursor: pointer;
+        }
+
+        .output-display {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+
+        .single-display {
+            height: 70px;
+            width: 100px;
+            background-color: deepskyblue;
+            border-radius: 5px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 20px 0px;
+            box-shadow: 0 0 10px rgba(0, 121, 255, 0.4);
+        }
+
+        #errordis {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator-body">
+        <h1>Age Calculater</h1>
+        <div class="age-input-form">
+            <div class="input-area">
+                <label for="date">Date</label>
+                <input type="date" id="birthdate" class="input-box" placeholder="DD">
+            </div>
+        </div>
+        <button onclick="agecal()">Calculate</button>
+        <div class="output-display">
+            <div class="single-display">
+                <h3 id="yeardis">-</h3>
+                <p>Years</p>
+            </div>
+            <div class="single-display">
+                <h3 id="menthdis">-</h3>
+                <p>Months</p>
+            </div>
+            <div class="single-display">
+                <h3 id="daysdis">-</h3>
+                <p>Days</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        function agecal() {
+
+            var birthdateInput = document.getElementById("birthdate").value;
+            var birthdate = new Date(birthdateInput);
+            var currentDate = new Date();
+
+            var date = birthdate.getDate();
+            var moths = birthdate.getMonth() + 1;
+            var year = birthdate.getFullYear();
+
+            var remaindays =0;
+            var userm = 0;
+
+            var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (year % 4 == 0) {
+                months[1] = 29;
+            }
+
+            // console.log(`${date},${moths},${year}`)
+
+            // ======================== convert date into milisectons and get diffrent between them ===================
+            var differentmlisec = currentDate.getTime() - birthdate.getTime();
+            console.log(`differentmlisec = ${differentmlisec}`)
+
+            var totaldays = differentmlisec / (1000 * 60 * 60 * 24)
+            var userageyears = totaldays / 365.25
+            var remaindays = Math.floor(totaldays) - (Math.floor(userageyears) * 365.25);
+
+            console.log(`totaldays = ${totaldays}, userageyears = ${userageyears} , remaindays = ${remaindays}`)
+
+            if (remaindays > date) {
+                remaindays = remaindays - (months[moths - 1] - date);
+            }
+
+            console.log(`ramaindays after birth months remain days remove = ${remaindays}`)
+
+            for (i = moths + 1 ; remaindays >= months[i] ; i++){
+                
+                userm++
+                console.log(`remaindays = ${remaindays}, [${i}] = ${months[i]}`)
+
+                remaindays -= months[i];
+                if (i >= 12) {
+                    i = 0
+                };
+            }
+
+            console.log(`ramaindays befor birth moths remove  = ${remaindays}`)
+
+            if(remaindays >= date){
+                remaindays -= date
+                userm++;
+            }
+
+            console.log(`months  = ${userm}`)
+            console.log(`last ramaindays after  = ${remaindays}`)
+
+
+
+
+            // document.getElementById('yeardis').innerText = userageyears;
+            // document.getElementById('menthdis').innerText = userm;
+            // document.getElementById('daysdis').innerText = remaindays
+        }
+
+    </script>
+</body>
+
+</html>

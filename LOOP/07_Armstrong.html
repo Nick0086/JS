@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	var nub,j,sum=0,s,n;
+
+	nub=parseInt(nub=prompt("Enter a number:"));
+	n=nub;
+
+	while(nub>=1){
+		j=nub%10;
+		s=j*j*j;
+		sum=sum + s;
+		nub=Math.floor(nub / 10);
+	}
+
+	if(sum==n)
+	{
+		document.write(n + " is a Armstrong number");
+	}else
+	{
+		document.write(n + " is not a Armstrong number");
+	}
+</script>

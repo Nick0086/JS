@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+
+
+        body {
+            background-color: #72BCB3;
+            font-family: cursive;
+            /* width: 100vw; */
+        }
+
+        .game-bord {
+            text-align: center;
+        }
+
+        .game-title {
+            font-size: 72px;
+            font-family: 'Cabin Sketch', cursive;
+            margin: 16px 0px;
+            line-height: 72px;
+        }
+
+        .choose-btn-box {
+            margin: 24px;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .btn {
+            font-size: 24px;
+            background: #0091A7;
+            width: 130px;
+            border-radius: 50px;
+            height: 40px;
+            margin: 0px 8px;
+            border: none;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            color: #fff !important;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            width: 240px;
+            height: 240px;
+            margin: 40px auto;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .flex-box {
+            width: 80px;
+            height: 80px;
+            background-color: aliceblue;
+            border: 2px solid #72BCB3;
+            color: red;
+            background: #A5D4CE;
+            font-size: 42px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .bt-none {
+            border-top: none !important;
+        }
+
+        .br-none {
+            border-right: none !important;
+        }
+
+        .bl-none {
+            border-left: none !important;
+        }
+
+        .bb-none {
+            border-bottom: none !important;
+        }
+
+        .choose-btn-box > .btn:focus,
+        .re-btn:hover{
+            background-color:  #286090;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="game-bord" id="game-bord">
+        <!-- ================== Game title ========================= -->
+        <h1 class="game-title">Tic Tac Toc</h1>
+
+        <!-- =========================== choose button =========================== -->
+
+        <div class="choose-btn-box">
+            <button class="btn" id="btnx" onclick="strt('x')">x</button>
+            <button class="btn" id="btno" onclick="strt('o')">o</button>
+        </div>
+
+        <div class="flex">
+            <button class="flex-box bt-none bl-none" id="t1" onclick="check('0')"></button>
+            <button class="flex-box bt-none" id="t2" onclick="check('1')"></button>
+            <button class="flex-box bt-none br-none" id="t3" onclick="check('2')"></button>
+            <button class="flex-box bl-none" id="t4" onclick="check('3')"></button>
+            <button class="flex-box" id="t5" onclick="check('4')"></button>
+            <button class="flex-box br-none" id="t6" onclick="check('5')"></button>
+            <button class="flex-box bb-none bl-none" id="t7" onclick="check('6')"></button>
+            <button class="flex-box bb-none" id="t8" onclick="check('7')"></button>
+            <button class="flex-box bb-none br-none" id="t9" onclick="check('8')"></button>
+        </div>
+        <button class="btn re-btn" id="btn" onclick="resta()">Restart</button>
+        <h2 class="title" id="winstatus"></h2>
+    </div>
+
+
+    <script>
+
+        var tarry = document.getElementsByClassName('flex-box');
+        var btnx = document.getElementById('btnx');
+        var btno = document.getElementById('btno');
+        var winshow = document.getElementById('winstatus');
+
+        var c = 0;
+
+        var currentplayer
+        var reslt
+
+
+        function strt(va) {
+            currentplayer = va
+            btno.disabled = true
+            btnx.disabled = true
+            winshow.innerText = 'your player = ' + currentplayer 
+        }
+
+        // ======================================function for palyer game ====================================
+
+        function check(v) {
+
+            var t = tarry[v].innerText;
+
+            if (t == '' && currentplayer != undefined) {
+                tarry[v].innerText = currentplayer;
+                win()
+                ranai()
+                c++
+            }
+
+            for (i = 0; i < tarry.length; i++) {
+                if (tarry[i].innerText == 'x') {
+                    tarry[i].style.color = '#2ebf2e'
+                }else{
+                    tarry[i].style.color = 'red'
+                }
+            }
+
+        }
+
+
+        // ======================================function for computer turn ====================================
+
+        function ranai() {
+            while (true) {
+                var ran = Math.round(Math.random() * 8)
+
+                if (reslt == 'd' || reslt == 'x' || reslt == 'o') {
+                    break;
+                }
+
+                if (tarry[ran].innerText == '') {
+                    if (currentplayer == 'x') {
+                        tarry[ran].innerText = 'o'
+                    } else {
+                        tarry[ran].innerText = 'x'
+                    }
+                    win()
+                    break;
+                }
+
+                if (c == 4) {
+                    break;
+                }
+
+            }
+        }
+
+        // ======================================function for win ====================================
+
+        function win() {
+
+            if (c == 9) {
+                winshow.innerText = ' Match drea';
+                reslt = 'd'
+            }
+
+            if ((tarry[0].innerText == 'x' && tarry[1].innerText == 'x' && tarry[2].innerText == 'x') ||
+                (tarry[3].innerText == 'x' && tarry[4].innerText == 'x' && tarry[5].innerText == 'x') ||
+                (tarry[6].innerText == 'x' && tarry[7].innerText == 'x' && tarry[8].innerText == 'x') ||
+                (tarry[0].innerText == 'x' && tarry[3].innerText == 'x' && tarry[6].innerText == 'x') ||
+                (tarry[1].innerText == 'x' && tarry[4].innerText == 'x' && tarry[7].innerText == 'x') ||
+                (tarry[2].innerText == 'x' && tarry[5].innerText == 'x' && tarry[8].innerText == 'x') ||
+                (tarry[0].innerText == 'x' && tarry[4].innerText == 'x' && tarry[8].innerText == 'x') ||
+                (tarry[2].innerText == 'x' && tarry[4].innerText == 'x' && tarry[6].innerText == 'x')) {
+                winshow.innerText = ' Winner = Player X';
+                reslt = 'x'
+                disa()
+            }
+
+            if ((tarry[0].innerText == 'o' && tarry[1].innerText == 'o' && tarry[2].innerText == 'o') ||
+                (tarry[3].innerText == 'o' && tarry[4].innerText == 'o' && tarry[5].innerText == 'o') ||
+                (tarry[6].innerText == 'o' && tarry[7].innerText == 'o' && tarry[8].innerText == 'o') ||
+                (tarry[0].innerText == 'o' && tarry[3].innerText == 'o' && tarry[6].innerText == 'o') ||
+                (tarry[1].innerText == 'o' && tarry[4].innerText == 'o' && tarry[7].innerText == 'o') ||
+                (tarry[2].innerText == 'o' && tarry[5].innerText == 'o' && tarry[8].innerText == 'o') ||
+                (tarry[0].innerText == 'o' && tarry[4].innerText == 'o' && tarry[8].innerText == 'o') ||
+                (tarry[2].innerText == 'o' && tarry[4].innerText == 'o' && tarry[6].innerText == 'o')) {
+                winshow.innerText = ' Winner = Player o';
+                reslt = 'o'
+                disa()
+            }
+
+
+        }
+
+        // ======================================function for diasble remain box ====================================
+
+        function disa() {
+            for (i = 0; i < tarry.length; i++) {
+                tarry[i].disabled = true;
+            }
+        }
+
+        // ======================================function for restart game ====================================
+        function resta() {
+            for (i = 0; i < tarry.length; i++) {
+                tarry[i].disabled = false;
+                tarry[i].innerText = '';
+            }
+
+            c = 0;
+
+            currentplayer = undefined;
+            reslt = ''
+
+            btno.disabled = false
+            btnx.disabled = false
+
+            winshow.innerText = '';
+        }
+
+    </script>
+
+</body>
+
+</html>

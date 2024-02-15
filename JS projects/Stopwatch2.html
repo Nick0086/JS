@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .stopwatch {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 1rem;
+      margin: 0 10px;
+    }
+  </style>
+
+  <title>Stopwatch</title>
+</head>
+
+<body>
+  <div class="stopwatch">
+    <span id="display">00:00:00:00</span>
+    <button id="startStopBtn">Start</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <script>
+
+    let timer;
+    let isRunning = false;
+    let milisecond = 0;
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+
+    function startStop() {
+      if (isRunning) {
+        clearInterval(timer);
+        document.getElementById('startStopBtn').textContent = 'Start';
+      } else {
+        timer = setInterval(updateTime, 10);
+        document.getElementById('startStopBtn').textContent = 'Stop';
+      }
+      isRunning = !isRunning;
+    }
+
+    function reset() {
+      clearInterval(timer);
+      document.getElementById('display').textContent = '00:00:00:00';
+      document.getElementById('startStopBtn').textContent = 'Start';
+      isRunning = false;
+      milisecond = 0;
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+    }
+
+    function updateTime() {
+      milisecond++
+      if (milisecond >= 100) {
+        milisecond = 0;
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+      }
+
+      const display = document.getElementById('display');
+      display.textContent =
+        (hours < 10 ? '0' : '') + hours + ':' +
+        (minutes < 10 ? '0' : '') + minutes + ':' +
+        (seconds < 10 ? '0' : '') + seconds + ':' +
+        milisecond;
+    }
+
+    document.getElementById('startStopBtn').addEventListener('click', startStop);
+    document.getElementById('resetBtn').addEventListener('click', reset);
+
+  </script>
+</body>
+
+</html>

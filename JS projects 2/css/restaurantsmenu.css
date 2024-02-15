@@ -1,0 +1,104 @@
+body{
+    font-family: 'Playpen Sans', cursive;
+}
+
+p{
+    margin: 8px 0px;
+}
+
+li{
+    list-style: none;
+    border:  1px solid #00000080;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cur-none{
+    cursor: auto;
+}
+
+.logo-img{
+    width: 100px;
+}
+.single-menu-item{
+    box-shadow:0 4px 7px rgba(0,0,0,.1);
+    position: relative;
+    padding-bottom: 120px;
+}
+
+.item-category > span{
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.item-price{
+    font-weight: bolder;
+}
+
+.item-des{
+    font-size: 13px;
+    letter-spacing: 0.1px;
+}
+
+.btn{
+    background-color : #e4022b;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    font-family: inherit;
+}
+
+.btn-check{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+}
+
+.btn-check:checked+.btn{
+    background-color: #e4022b !important;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 8px 6px #e4022b20;
+    background-color: #e4022b !important;
+    transform: scale(1.03) , translate(-50%);
+}
+
+.item-qty{
+    position: absolute;
+    bottom: 16%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+}
+
+.bill-wrapper{
+    box-shadow:0 4px 7px rgba(0,0,0,.1);
+}
+
+.disply-err{
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 14px;
+    color: #e4022b;
+}
+
+.input-group-text{
+    font-size: 14px;
+    background-color: #e4022b;
+    color: white;
+    font-weight: bold;
+}
+
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+    border-color: #e4022b;
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Form Validation</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(45deg, #0AADEA, #B722FF 70%);
+            width: 100%;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-wrapper {
+            width: 50%;
+            margin: 24px auto;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .form-title {
+            color: #ffffff;
+            padding: 12px;
+            background-color: black;
+            text-align: center;
+        }
+
+        .form-body {
+            padding: 24px;
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-single-input {
+            width: calc(100% / 2 - 24px);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .form-label {
+            color: #7B7B7B;
+            font-weight: 700;
+        }
+
+        .form-control {
+            margin-top: 8px;
+            width: 100%;
+            padding: 8px 16px;
+            color: #6e6e6e;
+            background-color: #7B7B7B20;
+            font-weight: 500;
+            font-size: 16px;
+            border: 1px solid #7B7B7B75;
+            outline: none;
+        }
+
+        .form-ratio-grop {
+            margin-top: 8px;
+            width: 100%;
+            padding: 8px 16px;
+            padding-left: 0px;
+            display: flex;
+        }
+
+        .form-ratio-grop>div {
+            margin-right: 30px;
+            color: #5b5b5b;
+            font-weight: 500;
+        }
+
+        .gender-radio {
+            margin-right: 8px;
+            outline: none;
+            accent-color: #6e6e6e;
+        }
+
+        .form-checkbox {
+            text-align: start;
+            width: auto !important;
+            margin-top: 0px;
+            margin-right: 8px;
+        }
+
+        .checkbox-area {
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            accent-color: #6e6e6e;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .btn {
+            font-family: inherit;
+            padding: 12px 24px;
+            background-color: #FD4C59;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-wrapper">
+        <div class="form-title">
+            <h2>Registration from</h2>
+        </div>
+        <form class="form-body" onsubmit=" return validation()">
+            <div class="form-single-input">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" id="    ">
+                <span id="fist-name-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastname">
+                <span id="last-name-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label"> City</label>
+                <select name="" class="form-control" id="city">
+                    <option value="">---------- Select City ----------</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Vapi">Vapi</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Vadodara">Vadodara</option>
+                    <option value="Rajkot">Rajkot</option>
+                </select>
+                <span id="city-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label">Gender</label>
+                <div class="form-ratio-grop">
+                    <div><input type="radio" name="gender" class="gender-radio">Male</div>
+                    <div><input type="radio" name="gender" class="gender-radio">Female</div>
+                </div>
+                <span id="gender-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" id="email">
+                <span id="email-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="number">
+                <span id="number-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" id="Password">
+                <span id="Pass-err" class="error"></span>
+            </div>
+            <div class="form-single-input">
+                <label class="form-label">Confirm Password</label>
+                <input type="text" class="form-control" id="Confirm-Password">
+                <span id="ConPass-err" class="error"></span>
+            </div>
+            <div class="form-single-input w-100">
+                <label class="form-label">Subject</label>
+                <div class="checkbox-area">
+                    <div>
+                        <input type="checkbox" class="form-control form-checkbox hobby">Sports
+                    </div>
+                    <div>
+                        <input type="checkbox" class="form-control form-checkbox hobby">Media
+                    </div>
+                    <div>
+                        <input type="checkbox" class="form-control form-checkbox hobby">Communication
+                    </div>
+                    <div>
+                        <input type="checkbox" class="form-control form-checkbox hobby">Science
+                    </div>
+                </div>
+                <span id="hobbey-err" class="error"></span>
+            </div>
+            <div class="w-100">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script>
+
+        var f_name = document.getElementById('firstname');
+        var l_name = document.getElementById('lastname');
+        var city = document.getElementById('city');
+        var gender = document.getElementsByName('gender');
+        var email = document.getElementById('email');
+        var number = document.getElementById('number');
+        var hobbey = document.getElementsByClassName('hobby');
+        var Password = document.getElementById('Password')
+        var con_Password = document.getElementById('Confirm-Password')
+        var checkcount = 0;
+
+        var email_pattern = /^[A-Za-z0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{2,3}$/
+        var number_pattern = /^[0-9]{10}$/;
+        var pass_pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9@#$%^&*]{8,15}$/
+
+        function validation() {
+
+            for (i = 0; i < hobbey.length; i++) {
+                if (hobbey[i].checked == true) {
+                    checkcount++
+                }
+            }
+
+            if (f_name.value == '') {
+                document.getElementById('fist-name-err').innerText = 'Please Enter Your First Name'
+                return false;
+            } else {
+                document.getElementById('fist-name-err').innerText = ''
+            }
+
+            if (l_name.value == '') {
+                document.getElementById('last-name-err').innerText = 'Please Enter Your Last Name'
+                return false;
+            } else {
+                document.getElementById('last-name-err').innerText = ''
+            }
+
+            if (city.value == '') {
+                document.getElementById('city-err').innerText = 'Please Select Your City Name'
+                return false;
+            } else {
+                document.getElementById('city-err').innerText = ''
+            }
+
+            if (gender[0].checked == false && gender[1].checked == false) {
+                document.getElementById('gender-err').innerText = 'Please select Your Gender'
+                return false;
+            } else {
+                document.getElementById('gender-err').innerText = ''
+            }
+
+            if (email_pattern.test(email.value) == false) {
+                document.getElementById('email-err').innerText = 'Please Enter Your Valid Email'
+                return false;
+            } else {
+                document.getElementById('email-err').innerText = ''
+            }
+
+            if (number_pattern.test(number.value) == false) {
+                document.getElementById('number-err').innerText = 'Please Enter Your Valid Number'
+                return false;
+            } else {
+                document.getElementById('number-err').innerText = ''
+            }
+
+            if (Password.value == '') {
+                document.getElementById('Pass-err').innerText = 'Please Enter Password'
+                return false;
+            } else {
+                document.getElementById('Pass-err').innerText = ''
+            }
+
+            if (pass_pattern.test(Password.value) == false) {
+                document.getElementById('Pass-err').innerText = 'Please Enter Valid Password'
+                return false;
+            } else {
+                document.getElementById('Pass-err').innerText = ''
+            }
+
+            if (con_Password.value == '') {
+                document.getElementById('ConPass-err').innerText = 'Please Enter Confirm Password '
+                return false;
+            } else {
+                if (con_Password.value != Password.value) {
+                    document.getElementById('ConPass-err').innerText = 'Confirm Password and Password doesnot match'
+                    return false;
+                } else {
+                    document.getElementById('ConPass-err').innerText = ''
+                }
+            }
+
+            if (checkcount == 0) {
+                document.getElementById('hobbey-err').innerText = 'Please Select atleast one Subject'
+                return false;
+            } else {
+                document.getElementById('hobbey-err').innerText = ''
+            }
+
+            alert('Registration successful')
+
+            // return false 
+        }
+    </script>
+</body>
+
+</html>

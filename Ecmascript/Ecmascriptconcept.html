@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMAscript</title>
+</head>
+<body>
+
+    <script>
+
+        // var , let  , const
+
+        // var a =10;
+        // document.write(a);
+
+        // function demo() {
+        //     var a =15;
+        //     document.write('<br>' +a);
+        // }
+        // demo()
+        // a = 20;
+        // document.write('<br>' + a);
+
+        // let a =10;
+        // document.write(a);
+
+        // function demo() {
+        //     let a =15;
+        //     document.write('<br>' +a);
+        // }
+        // demo()
+        // let a = 20;
+        // document.write('<br>' + a);
+
+        // const a =10;
+        // document.write(a);
+
+        // function demo() {
+        //      a =15;
+        //     document.write('<br>' +a);
+        // }
+        // demo()
+        // a = 20;
+        // document.write('<br>' + a);
+
+        
+        // Template string
+
+        // var a = 'CDMI'
+
+        // document.write("Hello" + a + 'jk')
+        // document.write(`<br>Hello ${a} jk`)
+
+        // Array Destructuring
+
+        // var arr =[10,'NK',true]
+
+        // var [number,name,stus] = arr
+
+        // document.write(number)
+
+        // Object Destructuring
+
+        // var obj ={
+        //     number :10,
+        //     name :'NK',
+        //     status : true
+        // }
+
+        // var {number,name,stus} = obj
+
+        // document.write(number)
+
+
+        // spread function
+
+        // var arr1 = ["emp1","emp2","emp3"]
+        // var arr2 = ["stf1","stf1","stf1"]
+        // var result = [...arr1,...arr2]
+        // document.write(result)
+
+        // rest function
+
+        // const demo = (a,b,...c) => {
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        // }
+
+        // demo(10,20,5,67,54,64);
+
+        // map function
+
+        var arry = [10,54,67,86,46,34,25,77,97]
+
+        // arry.map((val,indec,arry) => { return document.write(`<br>${val}`)})
+
+        // filter function
+
+        var filternumber =  arry.filter((val,indec,arry) => { return val > 40})
+        console.log(filternumber)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storgae</title>
+</head>
+<body>
+
+    <h1 id="new"></h1>
+    <button onclick="rem()">remove</button>
+
+    <script>
+
+        var arry = [1,2,3,4,5,7]
+        var myname = 'nk'
+        // set itme use for store value
+        // arryposition is key that use for access arry value
+        // you can difine any name for key
+
+        // localStorage.setItem('arryponum','arry')
+        localStorage.setItem('arryposition',arry)
+        localStorage.setItem('nh',myname)
+
+         // get itme use for get value which store in localstorage
+         //we can access logacal storage any other html page
+         //logal storage value clear by clear history of browswr 
+
+         var  vi = document.getElementById('new')
+    
+         vi.innerText = localStorage.getItem('arryposition');
+
+         function rem() {
+            // localStorage.clear();
+            localStorage.removeItem('nh');
+         }
+
+    </script>
+    
+</body>
+</html>

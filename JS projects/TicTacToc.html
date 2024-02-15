@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tic Tac Toc</title>
+
+  <link rel="stylesheet" href="css/tictactoc.css">
+
+</head>
+
+<body>
+
+  <main>
+    <div class="body">
+      <div class="body-wrapper">
+        <h1 class="game-title">Tic Tac Toc</h1>
+
+        <div class="game-logo active" id="logo">
+          <img src="Image/tic-tac-toe.png" alt="Gamelogo">
+        </div> 
+
+        <!-- ======================== game satrt button ======================== -->
+
+        <button class="btn start-btn active" onclick="startbt()" id="start-btn">Start</button>
+
+        <div class="selector-box" id="selector-area">
+          <!-- ============================= selector button ============================ -->
+          <div>
+            <button class="btn restart" id="btn" onclick="startgame(this.value)" value="x">x</button>
+            <button class="btn restart" id="btn" onclick="startgame(this.value)" value="o">o</button>
+          </div>
+
+          <!-- ======================== Back button ======================== -->
+
+          <button class="btn back-btn" id="bacttostart" onclick="backbtn()">Back</button>
+        </div>
+
+        <div class="game-bord" id="game-bord">
+          <div class="flex">
+            <button class="flex-box" id="t1" onclick="check('1')"></button>
+            <button class="flex-box" id="t2" onclick="check('2')"></button>
+            <button class="flex-box" id="t3" onclick="check('3')"></button>
+            <button class="flex-box" id="t4" onclick="check('4')"></button>
+            <button class="flex-box" id="t5" onclick="check('5')"></button>
+            <button class="flex-box" id="t6" onclick="check('6')"></button>
+            <button class="flex-box" id="t7" onclick="check('7')"></button>
+            <button class="flex-box" id="t8" onclick="check('8')"></button>
+            <button class="flex-box" id="t9" onclick="check('9')"></button>
+          </div>
+          <button class="btn re-btn" id="btn" onclick="rest()">Restart</button>
+          <h2 class="title" id="titel2"></h2>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+
+</body>
+
+
+</html>

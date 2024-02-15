@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+
+    <style>
+
+        button{
+            border: none;
+            padding: 0px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <div class="single-slider">
+            <img src="Image/sliderimag3.webp" id="slider" style="width: 100%; object-fit: cover;" alt="slider1">
+        </div>
+        <div class="slider-tum" style="text-align: center;">
+            <button onclick="slider1()"><img src="Image/sliderimag1.jpg" style="height: 50px; object-fit: cover;" alt=""></button>
+            <button onclick="slider2()"><img src="Image/sliderimag2.webp" style="height: 50px; object-fit: cover;" alt=""></button>
+            <button onclick="slider3()"><img src="Image/sliderimag3.webp" style="height: 50px; object-fit: cover;" alt=""></button>
+            <button onclick="slider4()"><img src="Image/sliderimag4.webp" style="height: 50px; object-fit: cover;" alt=""></button>
+            <button onclick="slider5()"><img src="Image/sliderimag5.webp" style="height: 50px; object-fit: cover;" alt=""></button>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript">
+
+        function slider1() {
+            document.getElementById('slider').src = 'Image/sliderimag1.jpg';
+        }
+
+        function slider2() {
+            document.getElementById('slider').src='Image/sliderimag2.webp';
+        }
+
+        function slider3() {
+            document.getElementById('slider').src='Image/sliderimag3.webp';
+        }
+
+        function slider4() {
+            document.getElementById('slider').src='Image/sliderimag4.webp';
+        }
+
+        function slider5() {
+            document.getElementById('slider').src='Image/sliderimag5.webp';
+        }
+
+    </script>
+</body>
+</html>

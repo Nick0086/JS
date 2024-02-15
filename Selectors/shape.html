@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shapes</title>
+
+	<style>
+		.shape-card {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.shape-item {
+			width: 200px;
+			height: 250px;
+			margin: 12px;
+		}
+
+		.shape-item>* {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid #00000050;
+		}
+
+		.shape-body {
+			height: 90%;
+			width: 100%;
+		}
+
+		.button-body {
+			height: 10%;
+			width: 100%;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+		function spaes1() {
+			var idselector = document.getElementById('spaes1')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '100px'
+			idselector.style.width = '100px'
+		}
+
+		function spaes2() {
+			var idselector = document.getElementById('spaes2')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '100px'
+			idselector.style.width = '100px'
+			idselector.style.borderRadius = '50%'
+		}
+
+		function spaes3() {
+			var idselector = document.getElementById('spaes3')
+
+			idselector.style.height = '0px'
+			idselector.style.width = '0px'
+			idselector.style.borderLeft = "70px solid transparent"
+			idselector.style.borderRight = "70px solid transparent"
+			idselector.style.borderTop = '100px solid red'
+			idselector.style.borderRadius = '50%'
+		}
+
+		function spaes4() {
+			var idselector = document.getElementById('spaes4')
+			idselector.style.height = '0px'
+			idselector.style.width = '0px'
+			idselector.style.borderLeft = "75px solid transparent"
+			idselector.style.borderRight = "75px solid transparent"
+			idselector.style.borderBottom = '100px solid red'
+		}
+
+		function spaes5() {
+			var idselector = document.getElementById('spaes5')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '100px'
+			idselector.style.width = '200px'
+			idselector.style.borderRadius = '50%'
+		}
+
+		function spaes6() {
+			var idselector = document.getElementById('spaes6')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '100px'
+			idselector.style.width = '100px'
+			idselector.style.transform = 'skew(-16deg)'
+		}
+
+		function spaes7() {
+			var idselector = document.getElementById('spaes7')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '100px'
+			idselector.style.width = '100px'
+			idselector.style.transform = 'rotate(45deg)'
+		}
+
+		function spaes8() {
+			var idselector = document.getElementById('spaes8')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '50px'
+			idselector.style.width = '100px'
+			idselector.style.borderTopLeftRadius = '50px'
+			idselector.style.borderTopRightRadius = '50px'
+		}
+
+		function spaes9() {
+			var idselector = document.getElementById('spaes9')
+			idselector.style.height = '0px'
+			idselector.style.width = '75px'
+			idselector.style.borderLeft = "50px solid transparent"
+			idselector.style.borderRight = "50px solid transparent"
+			idselector.style.borderBottom = '75px solid red'
+		}
+
+		function spaes10() {
+			var idselector = document.getElementById('spaes10')
+
+			idselector.style.backgroundColor = 'red'
+			idselector.style.height = '75px'
+			idselector.style.width = '150px'
+			idselector.style.borderTopLeftRadius = '100%'
+		}
+	</script>
+</head>
+
+<body>
+
+
+	<div class="shape-card">
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes1"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes1()">Squre</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes2"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes2()">Circle</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes3"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes3()">TrianglesCircul</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes4"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes4()">Triangles</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes5"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes5()">Ovals</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes6"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes6()">Parallelogram</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes7"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes7()">Diamonds</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes8"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes8()">Half-Ellipses</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes9"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes9()">Trapezoid</button>
+			</div>
+		</div>
+		<div class="shape-item">
+			<div class="shape-body">
+				<div id="spaes10"></div>
+			</div>
+			<div class="button-body">
+				<button onclick="spaes10()">Quarter-Ellipse</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

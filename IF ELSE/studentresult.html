@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	var name='Rahul',rn=1,law=79,ac=89,stat=89,eco=94,audit=87
+	var total=law+ac+stat+eco+audit
+	var per=total/5
+
+	document.write("Student name = " +name + "<br>" + "Roll No = " + rn + "<br>")
+	document.write("A/C = " +ac + "<br>" + "Law = " + law + "<br>" + "Stat = " + stat + "<br>" + "Eco = " + eco + "<br>" + "Audit = " + audit + "<br>" )
+	document.write("Total Marks = " + total + "<br>" + "Percentage = " + per + "<br>")
+
+	if(ac>law && ac>stat && ac>eco && ac>audit){
+		document.write("Maximum Marks = "+ ac +"<br");
+	}else if(law>stat && law>eco && law>audit){
+		document.write("Maximum Marks = "+ law +"<br");
+	}else if(stat>eco && stat>audit){
+		document.write("Maximum Marks = "+ stat +"<br");
+	}else if(eco>audit){
+		document.write("Maximum Marks = "+ eco+"<br");
+	}else{
+		document.write("Maximum Marks = "+ audit+"<br");	
+	}
+
+	if(ac<law && ac<stat && ac<eco && ac<audit){
+		document.write("Minimum Marks = "+ ac +"<br");
+	}else if(law<stat && law<eco && law<audit){
+		document.write("Minimum Marks = "+ law +"<br"); 
+	}else if(stat<eco && stat<audit){
+		document.write("Minimum Marks = "+ stat +"<br");
+	}else if(eco<audit){
+		document.write("Minimum Marks = "+ eco+"<br");
+	}else{
+		document.write("Minimum Marks = "+ audit+"<br");		
+	}
+
+</script>

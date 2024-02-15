@@ -1,0 +1,111 @@
+<script type="text/javascript">
+	
+	var car=['Audi','Volvo','Mclaren'];
+	var car2= new Array('Audi','Volvo','Mclaren') ;
+
+	document.write(car + "<br>");
+	document.write(car[2] + "<br>");
+	document.write(car2 + "<br>");
+
+	for(var i=0;i<car.length;i++){
+		document.write(car[i] + "<br>");
+	}	
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================concat()=========================================================
+	var fruit=new Array("Banana","Apple","Mango");
+	var vege=new Array("Carrot","Radish","Tomoto");
+	var mix=[];
+	mix=mix.concat(fruit,vege);
+	fruit=fruit.concat(vege);
+	
+
+	for(var i=0;i<fruit.length;i++){
+		document.write(fruit[i] + "  ");
+	}	
+
+	document.write("<br>" + mix);
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================join()=========================================================
+	document.write("Mix : " + mix.join("**"));
+
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================pop()=========================================================
+
+	mix.pop();
+	for(var i=0;i<mix.length;i++){
+		document.write(mix[i] + "  ");
+	}	
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================push()=========================================================
+
+	mix.push('orange');
+	document.write(mix + "<br>");
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================reverse()=========================================================
+
+	var reversearray = vege.reverse();
+	document.write(reversearray + "<br>");
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================shift()=========================================================
+
+	mix.shift();
+
+	document.write(mix + "<br>");
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+// =============================================sort()=========================================================
+
+	mix.sort();
+	document.write(mix + "<br>");
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+	var sorting = ['ac', 'bs', 'ag', 'aa', 'bb', 'ba'];
+	sorting.sort();
+	document.write("Alphabet sort ="+sorting + "<br>");
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+	var no = [56,66,25,98,50];
+	no.sort();
+	document.write("Number sort ="+no + "<br>");
+
+	document.write("Alphabet Length ="+sorting.length + "<br>");
+
+
+
+
+
+
+
+</script>

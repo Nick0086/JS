@@ -1,0 +1,39 @@
+<script type="text/javascript">
+	
+	var obj = {
+
+		no : 1,
+		name : "onj1"
+	}
+	document.write(obj.no + " - " + obj.name + "<br>");
+
+	obj.email = "obj1@gamil.com"
+
+	document.write(obj.no + " - " + obj.name + " - " + obj.email + "<br>");
+
+	var objarry = [
+
+		{no:1,name:"Object-1",email:"object1@gmail.com"},
+		{no:2,name:"Object-2",email:"object2@gmail.com"},
+		{no:3,name:"Object-3",email:"object3@gmail.com"}
+	]
+
+	for (var i = 0; i < objarry.length; i++) {
+		document.write("No = " + objarry[i].no + " - "  + "Name = " + objarry[i].name + " - "  + "Email = " + objarry[i].email + "<br>")
+	}
+
+	document.write("<br>" + "<br>" + "<br>");
+
+
+	var student = [
+
+		{no:1,name:"Student-1",email:"Student1@gmail.com",gender:"Male"},
+		{no:2,name:"Student-2",email:"Student2@gmail.com",gender:"Male"},
+		{no:3,name:"Student-3",email:"Student3@gmail.com",gender:"Male"}
+	]
+
+	for (var i = 0; i < objarry.length; i++) {
+		document.write("No = " + student[i].no + " - "  + "Name = " + student[i].name + " - "  + "Email = " + student[i].email + " - "  + "Gender = " + student[i].gender + "<br>")
+	}
+	
+</script>

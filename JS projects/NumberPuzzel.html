@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Puzzle</title>
+
+    <style>
+        .puzzel-box-body {
+            text-align: center;
+            position: relative;
+        }
+
+        .puzzel-bord {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            margin-top: 120px;
+        }
+
+        .single-number-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 0px;
+            border: 1px solid #00000050;
+            background-color: #ffffff70;
+        }
+
+        #rebtn {
+            position: absolute;
+            top: 130%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="puzzel-box-body">
+        <div class="puzzel-bord">
+            <button class="single-number-box" id="t1" onclick="movelt(0)">1</button>
+            <button class="single-number-box" id="t2" onclick="movetm(1)">2</button>
+            <button class="single-number-box" id="t3" onclick="movert(2)">3</button>
+            <button class="single-number-box" id="t4" onclick="moveml(3)">4</button>
+            <button class="single-number-box" id="t5" onclick="movem(4)">5</button>
+            <button class="single-number-box" id="t6" onclick="movemr(5)">6</button>
+            <button class="single-number-box" id="t7" onclick="movebl(6)">7</button>
+            <button class="single-number-box" id="t8" onclick="movebm(7)">8</button>
+            <button class="single-number-box" id="t9" onclick="movebr(8)"></button>
+        </div>
+        <h1 id="winbod"></h1>
+        <button id="rebtn" onclick="restart()">Restart</button>
+    </div>
+
+    <script>
+
+        var puzzelbox = document.getElementsByClassName('single-number-box')
+        var ti = document.getElementById('winbod');
+        var c = 0;
+
+        function startgam() {
+            for (i = 0; i < 10; i++) {
+                var ran = Math.round(Math.random() * 8)
+
+                // console.log('ran = ' + ran)
+                // console.log('ran value = ' + puzzelbox[ran].innerText)
+                // console.log('swp value = ' + puzzelbox[c].innerText)
+
+                var temp = puzzelbox[ran].innerText;
+                puzzelbox[ran].innerText = puzzelbox[c].innerText;
+                puzzelbox[c].innerText = temp;
+                c++
+                if (c == 9) {
+                    c = 0;
+                }
+            }
+        }
+
+        startgam()
+
+        function restart() {
+            startgam();
+            ti.innerText = '';
+        }
+
+        function move0(o) {
+            if (puzzelbox[0].innerText == '') {
+                puzzelbox[0].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move1(o) {
+            if (puzzelbox[1].innerText == '') {
+                puzzelbox[1].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move2(o) {
+            if (puzzelbox[2].innerText == '') {
+                puzzelbox[2].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move3(o) {
+            if (puzzelbox[3].innerText == '') {
+                puzzelbox[3].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move4(o) {
+            if (puzzelbox[4].innerText == '') {
+                puzzelbox[4].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move5(o) {
+            if (puzzelbox[5].innerText == '') {
+                puzzelbox[5].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move6(o) {
+            if (puzzelbox[6].innerText == '') {
+                puzzelbox[6].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move7(o) {
+            if (puzzelbox[7].innerText == '') {
+                puzzelbox[7].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function move8(o) {
+            if (puzzelbox[8].innerText == '') {
+                puzzelbox[8].innerText = puzzelbox[o].innerText;
+                puzzelbox[o].innerText = '';
+            }
+        }
+
+        function movelt(val) {
+            move1(val);
+            move3(val);
+            win()
+        }
+
+        function movetm(val) {
+            move0(val);
+            move2(val);
+            move4(val);
+            win()
+        }
+
+        function movert(val) {
+            move1(val);
+            move5(val);
+            win()
+        }
+
+        function moveml(val) {
+            move0(val);
+            move4(val);
+            move6(val);
+            win()
+        }
+
+        function movem(val) {
+            move1(val);
+            move3(val);
+            move5(val);
+            move7(val);
+            win()
+        }
+
+        function movemr(val) {
+            move2(val);
+            move4(val);
+            move8(val);
+            win()
+        }
+
+        function movebl(val) {
+            move3(val);
+            move7(val);
+            win()
+        }
+
+        function movebm(val) {
+            move4(val);
+            move6(val);
+            move8(val);
+            win()
+        }
+
+        function movebr(val) {
+            move5(val);
+            move7(val);
+            win()
+        }
+
+
+        function win() {
+
+            var pbv = ['', '', '', '', '', '', '', '', '']
+
+            for (i = 0; i < puzzelbox.length; i++) {
+                pbv[i] = parseInt(puzzelbox[i].innerText);
+                console.log('pbv' + i + '=' + pbv[i]);
+            }
+
+            if ((pbv[0] < pbv[1]) && (pbv[1] < pbv[2]) && (pbv[2] < pbv[3]) && (pbv[3] < pbv[4]) && (pbv[4] < pbv[5]) && (pbv[5] < pbv[6]) && (pbv[6] < pbv[7])) {
+                ti.innerText = 'you win';
+            }
+        }
+
+        // function win() {
+        //     if ((puzzelbox[0].innerText == '1') && (puzzelbox[1].innerText == '2') &&
+        //         (puzzelbox[2].innerText == '3') && (puzzelbox[3].innerText == '4') &&
+        //         (puzzelbox[4].innerText == '5') && (puzzelbox[5].innerText == '6') &&
+        //         (puzzelbox[6].innerText == '7') && (puzzelbox[7].innerText == '8')) {
+        //         ti.innerText = 'you win';
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

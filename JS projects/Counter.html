@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+
+<body>
+
+    <div class="counterbody">
+        <h1 id="count"></h1>
+        <button onclick="startconnt()">Start</button>
+        <button onclick="stopcount()">Stop</button>
+        <button onclick="reset()">reset</button>
+    </div>
+
+    <script>
+
+        var cnt = 0;
+        var counter;
+        document.getElementById('count').innerText = cnt;
+
+
+        function startconnt() {
+            counter = setInterval(function () {
+                cnt++
+                document.getElementById('count').innerText = cnt;
+            }, 10);
+        }
+
+        function stopcount() {
+            clearInterval(counter)
+        }
+
+        function reset() {
+            stopcount()
+            cnt = 0
+            document.getElementById('count').innerText = cnt;
+        }
+
+
+    </script>
+</body>
+
+</html>

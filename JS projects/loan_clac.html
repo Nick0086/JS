@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.box{
+			margin: auto;
+			width: 500px;
+			border: 1px solid;
+			padding: 50px;
+			text-align: center;
+		}
+		.box1{
+			display: flex;
+		}
+		.item{
+			display: flex;
+			padding: 10px;
+		}	
+		span{
+			font-size: 24px;
+			width: 150px;
+		}
+		input{
+			margin: auto;
+		}
+		button{
+			padding: 5px 50px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box">
+			<h1>loan calculater</h1>
+		<div class="item">
+			<span>loan Amount</span>
+			<input type="number" name="" id="amount">
+		</div>
+		<div class="item">
+			<span>Intrest Amount</span>
+			<input type="number" name="" id="rate">
+		</div>
+		<div class="item">
+			<span>Months</span>
+			<input type="number" name="" id="month">
+		</div>
+		<button onclick="clac()">=</button>
+	</div>
+ 	<table width="100%">
+ 		<tr>
+ 			<td id="print"></td>&nbsp;&nbsp;
+ 		</tr>
+ 	</table>
+
+
+	<script type="text/javascript">
+		
+
+		function clac() {
+
+			var amt=document.getElementById('amount').value;
+			var int=document.getElementById('rate').value;
+			var month=document.getElementById('month').value;
+			var div =document.getElementById('print');
+
+		
+			var intrest=(parseInt(amt*(int*0.01))/month);
+			var pri=(int*0.01)/12;
+ 			var payment=Math.floor(amt*(pri/(1-Math.pow(1+pri,-month))));
+ 			console.log(payment);
+
+			var print="Loan Amount:"+amt+"<br>Intrest Rate:"+int+"%<br>EMI:"+payment+"<br>Total Paid:"+(payment*month)+"<br><br>";
+
+			print += "<table border='1'><tr><th>Month</th><th>Balance</th>"+"<th>Interest</th><th>Principal</th><th>EMI</th><th>Total Pay Amount</th></tr>";
+
+
+			for (var i = 0; i < month; ++i) {
+				var monthp = 0;
+				var intamt = 0;
+				intamt=Math.floor(amt*pri);
+				monthp=Math.floor(payment-intamt);
+				emim=monthp+intamt;
+				tot=Math.ceil(parseInt(amt)+intamt-emim);
+				print+="<tr>";
+				print+="<td>"+(i + 1)+"</td>";
+				print+="<td>"+amt+"</td>";
+				print+="<td>"+intamt+"</td>";
+				print+="<td>"+monthp+"</td>";
+				print+="<td>"+emim+"</td>";
+				print+="<td>"+tot+"</td>"
+				print+="</tr>";
+				amt=(amt-emim+intamt);
+				// var intamt = intamt/month;
+			}
+
+			document.getElementById('print').innerHTML=print;
+
+		}
+
+
+	</script>
+
+</body>
+</html>

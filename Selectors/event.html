@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Events</title>
+</head>
+<body>
+
+
+	<h1 id="heading">Good morning</h1>
+
+	<button onclick="txt()">click</button>
+	<button ondblclick="txt()">click</button>
+	<button onmouseover="txt()">click</button>
+	<button onmouseout="txt()">click</button>
+	<button onclick="rest()">reset</button>
+
+
+	<hr>
+ 
+	<!-- <input type="text" id="password" onkeydown="pass()"> -->
+	<!-- <input type="text" id="password" onkeypress="pass()"> -->
+	<input type="text" id="password" onfocus="setv()" onkeyup="pass()">
+	<!-- <input type="text" id="password" onblur="setv()" onkeyup="pass()"> -->
+	<!-- <input type="text" id="password" onfocus="setv()"> -->
+	<!-- <input type="text" id="password" onblur="setv()"> -->
+
+	<h1 id="password-show"></h1>
+
+	<hr>
+
+
+	<select id="city" onchange="city()">
+		<option value="">------select-------</option>
+		<option value="Surat">Surat</option>
+		<option value="Vapi">Vapi</option>
+		<option value="Navsari">Navsari</option>
+		<option value="Vesu">Vesu</option>
+	</select>
+
+	<h1 id="cityname"></h1>
+
+	<script type="text/javascript">
+
+		function rest() {
+			document.getElementById('heading').innerText='Good Morning'
+		}
+		
+		function txt() {
+			document.getElementById('heading').innerText='Good Night'
+		}
+
+
+		function pass() {
+			var x=document.getElementById('password').value;
+
+			document.getElementById('password-show').innerText=x;
+		}
+
+		function setv() {
+			document.getElementById('password').style.backgroundColor = 'red';
+		}
+
+		function city() {
+			var x=document.getElementById('city').value;
+
+			document.getElementById('cityname').innerText=x;
+		}
+
+	</script>
+
+</body>
+</html>

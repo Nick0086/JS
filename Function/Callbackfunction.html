@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <input id="by">hiii</input> -->
+
+    <script>
+
+        function main(ans,res,err) {
+            if(confirm(ans)){
+                res()
+            }else{
+                err()
+            }
+        }
+    
+        function yes() {
+            document.write('item deleted')
+        }
+    
+        function no() {
+            document.write('item not deleted')
+        }
+    
+        main('are you sure..!',yes,no)
+
+        // var hj = document.getElementById('by')
+
+        // hj.addEventListener('click',(e) =>{
+        //     console.log(e)
+        // })
+    
+    </script>
+</body>
+</html>
+

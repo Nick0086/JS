@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Age Calculater</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dbe9ff;
+            font-family: 'Playpen Sans', cursive;
+            background-color: #111827;
+            color: white;
+        }
+
+        .calculator-body {
+            border: 2px solid deepskyblue;
+            padding: 40px;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 40%;
+        }
+
+        .age-input-form {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            margin: 24px auto;
+        }
+
+        .input-area {
+            width: calc(100%/3 - 12px)
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        .input-box {
+            width: 100%;
+            border: 2px solid deepskyblue;
+            height: 48px;
+            border-radius: 7px;
+            padding: 8px;
+            margin-top: 4px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        ::placeholder {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        button {
+            font-family: inherit;
+            border: 2px solid deepskyblue;
+            background: deepskyblue;
+            color: white;
+            font-size: 18px;
+            font-weight: bolder;
+            border-radius: 7px;
+            padding: 8px 16px;
+            margin-top: 16px;
+            box-shadow: 0 0 12px 1px rgba(0, 121, 255, 0.4);
+            cursor: pointer;
+        }
+
+        .output-display {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+
+        .single-display {
+            height: 70px;
+            width: 100px;
+            background-color: deepskyblue;
+            border-radius: 5px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 20px 0px;
+            box-shadow: 0 0 10px rgba(0, 121, 255, 0.4);
+        }
+
+        #errordis {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator-body">
+        <h1>Age Calculater</h1>
+        <div class="age-input-form">
+            <div class="input-area">
+                <label for="date">Date</label>
+                <input type="number" id="date" class="input-box" placeholder="DD">
+            </div>
+            <div class="input-area">
+                <label for="month">Month</label>
+                <input type="number" id="month" class="input-box" placeholder="MM">
+            </div>
+            <div class="input-area">
+                <label for="year">Year</label>
+                <input type="number" id="year" class="input-box" placeholder="YYYY">
+            </div>
+        </div>
+        <button onclick="subm()">Calculate</button>
+        <div class="output-display">
+            <div class="single-display">
+                <h3 id="yeardis">-</h3>
+                <p>Years</p>
+            </div>
+            <div class="single-display">
+                <h3 id="menthdis">-</h3>
+                <p>Months</p>
+            </div>
+            <div class="single-display">
+                <h3 id="daysdis">-</h3>
+                <p>Days</p>
+            </div>
+        </div>
+        <p id="errordis"></p>
+    </div>
+
+    <script>
+
+        var usardate = document.getElementById('date');
+        var usarmoth = document.getElementById('month');
+        var usaryear = document.getElementById('year');
+        var errordis = document.getElementById('errordis')
+        var inputdate = new Date()
+        var currentdate = new Date()
+        var inputdatemlisec
+        var currentdatemlisec
+        var differentmlisec
+        var totaldays
+        var userageyears
+
+        // currentdate.setDate('31');
+        // currentdate.setMonth('11');
+        // currentdate.setFullYear('2020');
+
+        var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        if (currentdate.getFullYear() % 4 == 0) {
+            months[1] = 29;
+        } else {
+            months[1] = 28;
+        }
+
+        var mothsdaysum = 0
+        var userm = 0;
+        var remaindays
+
+        function subm() {
+            if (usardate.value != '' && usarmoth.value != '' && usaryear.value != '' &&
+                usardate.value <= 31 && usarmoth.value <= 12 && usaryear.value.length > 3
+                && usardate.value > 0 && usarmoth.value > 0) {
+                agecal()
+            } else {
+                errordis.innerText = 'Please Enter Valid Date'
+                document.getElementById('yeardis').innerText =  '-'
+                document.getElementById('menthdis').innerText = '-'
+                document.getElementById('daysdis').innerText = '-'
+            }
+        }
+
+        function agecal() {
+
+            // ==================== set user input date ========================
+
+            inputdate.setDate(usardate.value);
+            inputdate.setMonth(usarmoth.value - 1);
+            inputdate.setFullYear(usaryear.value);
+
+            // ======================== convert date into milisectons and get diffrent between them ===================
+
+            inputdatemlisec = inputdate.getTime();
+            currentdatemlisec = currentdate.getTime();
+
+            differentmlisec = currentdatemlisec - inputdatemlisec; 
+
+            totaldays = (((differentmlisec / 1000) / 60) / 60) / 24;
+            console.log(`Totaol Days = ${totaldays}`)
+
+            if (inputdate.getFullYear() % 4 == 0 && usarmoth.value == 2 && usardate.value == 29 ) {
+                userageyears = (totaldays += 2) / 365
+            } else {
+                userageyears = (totaldays += 1) / 365
+            }
+
+            // console.log(`age = ${userageyears}`)
+
+            remaindays = totaldays - (Math.floor(userageyears) * 365.25);
+
+            // console.log(`Totaol Days = ${Math.floor(userageyears) * 365.25}`)
+            // console.log(`Totaol remain = ${remaindays}`)
+            // console.log(` Days = ${usardate.value}`)
+
+            // if (Math.round(remaindays) > usardate.value) {
+            //     remaindays = remaindays - (months[usarmoth.value - 1] - usardate.value);
+            // }
+
+            console.log(`remain afetr current month Days = ${remaindays}`)
+
+            for (i = parseInt(usarmoth.value); remaindays >= months[i - 1]; i++) {
+                
+
+                userm ++
+
+                remaindays -= months[i - 1];
+
+                if (i >= 12) {
+                    i = 0
+                };
+            }
+
+            // if (Math.round(remaindays) > usardate.value) {
+            //     remaindays -= usardate.value;
+            //     userm++;
+            // }
+
+            document.getElementById('yeardis').innerText = Math.floor(userageyears);
+            document.getElementById('menthdis').innerText = userm;
+            if (inputdate.getFullYear() % 4 == 0) {
+                document.getElementById('daysdis').innerText = Math.ceil(remaindays)
+            } else {
+                document.getElementById('daysdis').innerText = Math.round(remaindays)
+            }
+
+            reset();
+        }
+
+        function reset(){
+            userm = 0;
+            remaindays = 0;
+        }
+
+    </script>
+</body>
+
+</html>

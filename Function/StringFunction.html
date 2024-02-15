@@ -1,0 +1,46 @@
+<script type="text/javascript">
+	
+	var word="hello world...!";
+	var nw=",byyy";
+	var sw=(word.search("hello"));
+	document.write(word+ "<br>");
+	document.write(word.big() + "<br>");
+	document.write(word.small() + "<br>");
+	document.write(word.bold() + "<br>");
+	document.write(word.italics() + "<br>");
+	document.write(word.strike() + "<br>");
+	document.write(word.fontcolor("blue") + "<br>");
+	document.write(word.fontsize("6") + "<br>");
+	document.write(word.italics() + "<br>");
+	document.write(word.link("https://www.google.com/") + "<br>");
+	document.write(word.length+ "<br>");
+	document.write(word.charAt(5) + "<br>");
+	document.write(word.concat(nw) + "<br>");
+	document.write(word.indexOf("l") + "<br>");
+	document.write(word.lastIndexOf("l") + "<br>");
+
+	var my=(word.match("world"));
+
+	if(my != null){
+		document.write("yes match <br>");
+	}
+	else{
+		document.write("no match <br>");
+	}
+
+	var rw=(word.replace("hello","byyyy"));
+	document.write(rw + "<br>");
+	
+	if(sw >= 0){
+		document.write("text found <br>");
+	}
+	else{
+		document.write("text not found <br>");
+	}
+
+	document.write(word.slice(0,4) + "<br>");
+	document.write(word.substr(0,4) + "<br>");
+	document.write(word.substring(0,4) + "<br>");
+	document.write(word.toLowerCase() + "<br>");
+	document.write(word.toUpperCase() + "<br>");
+</script>

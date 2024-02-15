@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+
+<body>
+
+    Value 1 = <input type="text" id="no1"><br><br>
+    <!-- oprater = <input type="text" id="as"><br><br> -->
+    Value 2 = <input type="text" id="no2"><br><br>
+    <!-- <input type="button" value="ans" onclick="ans()"> -->
+    <input type="button" value="+" onclick="ans('+')">
+    <input type="button" value="-" onclick="ans('-')">
+    <input type="button" value="*" onclick="ans('*')">
+    <input type="button" value="/" onclick="ans('/')">
+
+    <h1 id="ans"></h1>
+
+
+    <script>
+
+        function ans(opr) {
+            var nub1 = parseInt(document.getElementById('no1').value);
+            var nub2 = parseInt(document.getElementById('no2').value);
+            var ans;
+
+
+            if (opr == '+' ) {
+                ans = nub1 + nub2;
+            }
+            else if(opr == '-'){
+                ans = nub1-nub2;
+            }
+            else if(opr == '*'){
+                ans = nub1*nub2;
+            }
+            else{
+                ans = Math.round(ans = nub1/nub2);
+            }
+
+
+            document.getElementById('ans').innerText = ans;
+
+        }
+
+        // function ans() {
+        //     var nub1 = parseInt(document.getElementById('no1').value);
+        //     var nub2 = parseInt(document.getElementById('no2').value);
+        //     var opr = document.getElementById('as').value;
+        //     var ans;
+
+
+        //     if (opr == '+' ) {
+        //         ans = nub1 + nub2;
+        //     }
+        //     else if(opr == '-'){
+        //         ans = nub1-nub2;
+        //     }
+        //     else if(opr == '*'){
+        //         ans = nub1*nub2;
+        //     }
+        //     else{
+        //         ans = nub1/nub2;
+        //     }
+
+
+        //     document.getElementById('ans').innerText = ans;
+
+        // }
+    </script>
+</body>
+
+</html>

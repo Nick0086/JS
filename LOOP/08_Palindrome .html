@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	var nub,j,pali=0,sum=0,n;
+
+	nub=parseInt(nub=prompt("Enter a number:"));
+	n=nub;
+
+	while(nub!=0){
+		j=nub%10;
+		sum=(sum*10) + j;
+		nub=Math.floor(nub / 10);
+	}
+
+	if(sum==n)
+	{
+		document.write(n + " is a Palindrome number");
+	}else
+	{
+		document.write(n + " is not a Palindrome number");
+	}
+</script>

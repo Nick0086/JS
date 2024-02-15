@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .slider-body{
+            height: 420px;
+        }
+
+        .imgslider {
+            width: 100%;
+        }
+
+        .sliderbtn {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .btn {
+            margin: 0px 6px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="slider-body">
+        <img src="Image/sliderimag1.jpg" class="imgslider" alt="img1">
+        <img src="Image/sliderimag2.webp" class="imgslider" alt="img1">
+        <img src="Image/sliderimag3.webp" class="imgslider" alt="img1">
+        <img src="Image/sliderimag4.webp" class="imgslider" alt="img1">
+        <img src="Image/sliderimag5.webp" class="imgslider" alt="img1">
+    </div>
+    <div class="sliderbtn">
+        <button class="btn prewbtn" onclick="prew()" id="pre">Prew</button>
+        <button class="btn nextbtn" onclick="next()" id="next">Next</button>
+    </div>
+
+
+    <script>
+
+        var sliderimg = document.getElementsByClassName('imgslider')
+        var imghight = document.getElementsByClassName('imgslider')
+        var pre = document.getElementById('pre')
+        var nex = document.getElementById('next')
+        var c = 0;
+
+        sliderstart()
+
+        if (c == 0) {
+            pre.disabled = true
+        }
+
+        function sliderstart() {
+            for (i = 1; i < sliderimg.length; i++) {
+                sliderimg[i].style.display = 'none';
+            }
+        }
+
+        function prew() {
+            c--
+
+            if (c < 0) {
+                c = 0;
+            }
+
+            disnone()
+        }
+
+        function next() {
+   
+            c++
+
+            if (c > sliderimg.length - 1) {
+                c = sliderimg.length;
+            }
+
+            disnone()
+        }
+
+        function disnone() {
+            for (i = 0; i < sliderimg.length; i++) {
+                sliderimg[i].style.display = 'none';
+            }
+
+            sliderimg[c].style.display = 'block';
+            
+
+            if (c == 0) {
+                pre.disabled = true;
+            }else{
+                pre.disabled = false
+            }
+
+            if (c == 4) {
+                nex.disabled = true;
+            }else{
+                nex.disabled = false
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="Image/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+ 
+    <link rel="stylesheet" href="css/restaurantsmenu.css"> 
+</head>
+
+<body>
+
+    <!-- ================================== start Restaurants Menu ================================== -->
+
+    <div class="container py-4">
+        <div class="row">
+            <!-- ================================== Restaurants Menu area ================================== -->
+            <div class="col-md-9">
+                <div class="menu-wrapper row g-4">
+                    <div class="text-center">
+                        <img src="Image/logo.svg" alt="logo" class="img-fluid  logo-img">
+                    </div>
+                    <div class="col-4 ">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/VegZingerBox.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Veg Zinger Box</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">veg</span>
+                                </div>
+                                <p class="item-price">₹313.33</p>
+                                <p class="item-des">
+                                    A deal for the Veg Zinger lovers : Get 1 Veg Zinger, 2 Veg Patties & 1 Pepsi 475ml
+                                </p>
+                                <span class="disply-err"></span>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(1)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(1)">+</li>
+                                </ul>
+                                <input type="checkbox" class="btn-check" id="btn-che" onclick="bill(1) "
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-che">Add to
+                                    Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/VegBiryaniBox.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Veg Biryani Box</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">veg</span>
+                                </div>
+                                <p class="item-price">₹279.05</p>
+                                <p class="item-des">
+                                    Biryani lovers unite : Get 1 Veg Biryani Bucket with gravy, 1 Veg Patty & 1 Pepsi
+                                    475ml
+                                </p>
+                                <span class="disply-err"></span>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(2)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(2)">+</li>
+                                </ul>
+                                <input type="checkbox" class="btn-check" id="btn-check2" onclick="bill(2)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check2">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ChickenBox.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">All Chicken Box</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹189.52</p>
+                                <p class="item-des">
+                                    A Box with your favorites! Get 1 pc Hot & Crispy, 2 Hot Wings & 1 Chicken Strip at a
+                                    deal price
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(3)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(3)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check3" onclick="bill(3)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check3">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ZingerTandooriBox.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Zinger Tandoori Box</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹313.33</p>
+                                <p class="item-des">
+                                    A deal for Tandoori lovers : Get 1 Tandoori Zinger, 2 Hot Wings, 1 Veg Patty & 1
+                                    Pepsi 475ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(4)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(4)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check4" onclick="bill(4)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check4">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/PopcornBiryaniBox.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Popcorn Biryani Box</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹328.57</p>
+                                <p class="item-des">
+                                    Biryani lovers unite : Get 1 Popcorn Biryani Bucket with gravy, 2 Hot Wings & 1
+                                    Pepsi 475ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(5)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(5)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check5" onclick="bill(5)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check5">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/VegZingerBurger.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Veg Zinger Burger</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">veg</span>
+                                </div>
+                                <p class="item-price">₹188.57</p>
+                                <p class="item-des">
+                                    Signature veg burger with crispy patties, veggies & a tangy sauce
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(6)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(6)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check6" onclick="bill(6)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check6">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/2VegKrispersMeal.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">2 Veg Krispers Meal</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">veg</span>
+                                </div>
+                                <p class="item-price">₹288.57</p>
+                                <p class="item-des">
+                                    2 veg value burgers, crispy medium fries & 2 delicious dips (20 gm each) at a deal
+                                    price
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(7)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(7)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check7" onclick="bill(7)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check7">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/2pcVegPatty.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">2 pc Veg Patty</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">veg</span>
+                                </div>
+                                <p class="item-price">₹155.24</p>
+                                <p class="item-des">
+                                    Delicious, crispy, veg add-on
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(8)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(8)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check8" onclick="bill(8)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check8">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/BiryaniRice.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Biryani Rice</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">veg</span>
+                                </div>
+                                <p class="item-price">₹139.04</p>
+                                <p class="item-des">
+                                    Flavorful aromatic rice to pair with your KFC favorites</p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(9)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(9)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check9" onclick="bill(9)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check9">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/SingleChickenRoll.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Single Chicken Roll</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹119.05</p>
+                                <p class="item-des">
+                                    Street style roll with single chicken strip, onions and two spicy sauce
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(10)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(10)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check10" onclick="bill(10)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check10">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/RegularPopcorn.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Regular Popcorn</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹115.24</p>
+                                <p class="item-des">
+                                    Signature bite-sized boneless chicken, with special spices
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(11)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(11)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check11" onclick="bill(11)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check11">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ClassicChickenRoll&PepsiCombo.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Classic Chicken Roll & Pepsi Combo</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹176.19</p>
+                                <p class="item-des">
+                                    Our new Classic Chicken Roll served with Pepsi 475ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(12)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(12)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check12" onclick="bill(12)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check12">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ClassicChickenRollMealfor1.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Classic Chicken Roll Meal for 1</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹339.05</p>
+                                <p class="item-des">
+                                    Deal combo of 1 Classic Chicken Roll, Large Fries, 2 Dips & Pepsi 475ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(13)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(13)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check13" onclick="bill(13)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check13">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ChickenBox1.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">The Allu Arjun Combo</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹523.00</p>
+                                <p class="item-des">
+                                    Try Allus fav-1 Hot & Crispy Chicken,1 Smoky Red, Reg Popcorn, Spicy Fries & 1 Dip
+                                    20gm
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(14)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(14)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check14" onclick="bill(14)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check14">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ChickenBox2.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">All in One Bucket</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹726.00</p>
+                                <p class="item-des">
+                                    1 Leg, 1 Hot & Crispy, 2 Wings, 2 Strips, 1 Zinger Fillet, 3 Dips [20gm each] & 1
+                                    Pepsi 475 ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(15)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(15)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check15" onclick="bill(15)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check15">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/ChickenBox3.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Bucket for Two</h5>
+                                <div class="item-category">
+                                    <img src="Image/Non_veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Non veg</span>
+                                </div>
+                                <p class="item-price">₹599.05</p>
+                                <p class="item-des">
+                                    combo of 2pc Hot & Crispy, 2 pc Smoky Red Chicken & Large Popcorn
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(16)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(16)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check16" onclick="bill(16)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check16">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/cake1.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Chocolate Lava Cake</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹108.57</p>
+                                <p class="item-des">
+                                    Soft Chocolate cake with a gooey center- perfect chocolaty end to every meal
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(17)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(17)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check17" onclick="bill(17)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check17">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/cack2.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Choco Mud Pie</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹128.57</p>
+                                <p class="item-des">
+                                    Chocolate lovers unite! Say hello to our creamy chocolate & cake dessert- a must
+                                    try!
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(18)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(18)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check18" onclick="bill(18)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check18">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/drink1.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Pepsi 475ml PET</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹57.14</p>
+                                <p class="item-des">
+                                    Pepsi 475ml PET
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(19)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(19)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check19" onclick="bill(19)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check19">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/drink2.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Pepsi Can 300 ml</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹57.14</p>
+                                <p class="item-des">
+                                    Pepsi Can 300 ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(20)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(20)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check20" onclick="bill(20)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check20">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/drink3.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">7UP Can 300 ml</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹57.14</p>
+                                <p class="item-des">
+                                    7UP Can 300 ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(21)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(21)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check21" onclick="bill(21)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check21">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/drink4.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Pepsi Black Can 300 ml</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹57.14</p>
+                                <p class="item-des">
+                                    Pepsi Black Can 300 ml
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(22)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(22)">+</li>
+                                </ul>55
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check22" onclick="bill(22)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check22">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="single-menu-item rounded-3 overflow-hidden h-100">
+                            <div class="item-img">
+                                <img src="Image/drink5.jpg" class="img-fluid" alt="item-img">
+                            </div>
+                            <div class="item-detail p-3">
+                                <h5 class="item-name fw-bolder">Mirinda Can 300 ml</h5>
+                                <div class="item-category">
+                                    <img src="Image/veg.svg" alt="img-fluid">
+                                    <span class="ms-2">Veg</span>
+                                </div>
+                                <p class="item-price">₹57.14</p>
+                                <p class="item-des">
+                                    Mirinda Can 300 ml/';][p-'
+                                </p>
+                                <ul class="item-qty d-flex justify-content-center p-0 mt-3">
+                                    <li class="px-3 border-end-0 qty-min" onclick="qtymin(23)">-</li>
+                                    <li class="px-3 cur-none qty-cnt">0</li>
+                                    <li class="px-3 border-start-0 qty-plus" onclick="qtyplus(23)">+</li>
+                                </ul>
+                                <span class="disply-err"></span>
+                                <input type="checkbox" class="btn-check" id="btn-check23" onclick="bill(23)"
+                                    autocomplete="off">
+                                <label class="btn text-white border-0 rounded-pill w-75 mt-4 py-2" for="btn-check23">Add
+                                    to Cart</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ================================== Restaurants bill area ================================== -->
+            <div class="col-md-3">
+                <div class="bill-wrapper rounded-2 p-3 sticky-md-top mt-5">
+                    <h3 class="title fw-bolder text-center">Receipt</h3>
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-between fw-bold mb-3">
+                        <p class="m-0">Item Total</p>
+                        <span id="subtotal">₹00.00 </span>
+                    </div>
+                    <div class="d-flex justify-content-between fw-bold mb-3">
+                        <p class="m-0">Gst @18%</p>
+                        <span id="gst-amount">₹00.00</span>
+                    </div>
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-between fw-bold mb-3">
+                        <p class="m-0">Total Amount</p>
+                        <span id="gross-amount">₹00.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between fw-bold mb-3">
+                        <p class="m-0">Discount<span class="ms-1" id="disper"></span></p>
+                        <span id="dis-amount">₹00.00</span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" id="disbtn" for="inputGroup">Apply</label>
+                        <input type="text" class="form-control" onclick="dic()" aria-label="Sizing example input"
+                            id="inputGroup" placeholder="Cupon Code">
+                    </div>
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-between fw-bold mb-3">
+                        <p class="m-0">TO PAY</p>
+                        <span id="total-amount">₹00.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/restaurantsmenu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .calculatorbody {
+            width: 350px;
+            box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .display {
+            width: 100%;
+            box-sizing: border-box;
+            height: 80px;
+            background-color: #000;
+            border: 1px solid #ffffff50 !important;
+            color: #ffffff;
+            text-align: end;
+            font-size: 24px;
+        }
+
+        .display:focus {
+            outline: none;
+        }
+
+        .calculatorbutton {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .btn-deg {
+            width: 25%;
+            height: 60px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.95);
+            color: #ffffff;
+            border: 1px solid #ffffff50 !important;
+            font-size: 20px;
+            transition: 0.2s ease-in;
+        }
+
+        .btn-deg:hover {
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        .btn-c {
+            color: orange;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .btn-t {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculatorbody">
+        <input type="text" readonly class="display" id="display">
+        <div class="calculatorbutton">
+            <input type="button" value="C" class="btn-deg btn-c" onclick="getvalue(this.value)">
+            <input type="button" value="DEL" class="btn-deg btn-c" onclick="del()">
+            <input type="button" value="%" class="btn-deg btn-c" onclick="per()">
+            <input type="button" value="/" class="btn-deg btn-c" onclick="assis(this.value),oprea()">
+            <input type="button" value="7" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="8" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="9" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="*" class="btn-deg btn-c" onclick="assis(this.value),oprea()">
+            <input type="button" value="4" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="5" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="6" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="-" class="btn-deg btn-c" onclick="assis(this.value),oprea()">
+            <input type="button" value="1" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="2" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="3" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="+" class="btn-deg btn-c" onclick="assis(this.value),oprea()">
+            <input type="button" value="0" class="btn-deg" onclick="getvalue(this.value)">
+            <input type="button" value="." class="btn-deg" onclick="appendToDisplay('.')">
+            <input type="button" value="=" class="btn-deg w-50 btn-t" onclick="calculateResult()">
+        </div>
+    </div>
+
+    <script>
+
+        var display = document.getElementById('display');
+        var nub1, nub2 , ans, opr;
+
+        function getvalue(n){
+            display.value += n;
+
+            if(n == 'C'){
+                display.value = '';
+            }
+        }
+
+        function assis(a) {
+            nub1 = parseInt(display.value);
+            display.value = '';
+            opr = a;
+        }
+
+        function del() {
+            display.value = display.value.substring(0, display.value.length - 1)
+        }
+
+        
+        function per(){
+            var disv = display.value/100;
+
+            display.value = disv;
+
+        }
+
+        function calculateResult(){
+            nub2 = parseInt(display.value);
+
+            if (opr == '+' ) {
+                ans = nub1 + nub2;
+            }
+            else if(opr == '-'){
+                ans = nub1-nub2;
+            }
+            else if(opr == '*'){
+                ans = nub1*nub2;
+            }
+            else{
+                ans = Math.round(ans = nub1/nub2);
+            }
+
+            display.value = ans;
+        }
+
+    </script>
+</body>
+
+</html>
