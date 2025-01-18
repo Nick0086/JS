@@ -1,0 +1,33 @@
+<script>
+
+    let data = [
+        { id: 1, name: 'John', age: 35, gender: "male", city: " New York" },
+        { id: 2, name: 'Jane', age: 30, gender: "female" },
+        { id: 3, name: 'Alice', age: 35, gender: "female" },
+        { id: 4, name: 'Bob', age: 30, gender: "male" },
+        { id: 5, name: 'Charlie', age: 45, gender: "female" }
+    ]
+
+    function transformData(data) {
+        const transformedObject = {};
+
+        data.forEach(person => {
+            const { id, name, age, gender, ...propes } = person;
+
+            if (!transformedObject[age]) {
+                transformedObject[age] = {};
+            };
+            if (!transformedObject[age][gender]) {
+                transformedObject[age][gender] = [];
+            };
+
+            transformedObject[age][gender].push({ id, name, age, ...propes });
+        });
+
+        return transformedObject;
+    }
+    const transformedData = transformData(data);
+    document.write(JSON.stringify(transformedData));
+    console.log(transformedData);
+
+</script>

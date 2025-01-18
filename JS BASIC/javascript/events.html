@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascrpt events</title>
+</head>
+<body>
+
+	<h1 onmouseover="ov()" onmouseout="ot()" id="d1">hello</h1>
+	<div id="box"></div>
+
+	<input type="text" id="txt" name="" onkeypress="kp()" onkeyup="up()">
+
+	<select onchange="ch()" id="city">
+		<option value="surat">surat</option>
+		<option value="vapi">vapi</option>
+		<option value="surat">surat</option>
+		<option value="surat">surat</option>
+		<option value="surat">surat</option>
+	</select>
+
+	<script>
+
+		function ch()
+		{
+			var m = document.getElementById('city').value;
+		
+			document.getElementById('txt').value = m;
+		}
+
+		function up()
+		{
+			var s = document.getElementById('txt').value;
+		
+			document.getElementById('box').innerHTML = s;
+		}
+		
+		function kp()
+		{
+			document.getElementById('txt').style.boxShadow="5px 10px 0px grey";
+		}
+
+		function ov()
+		{
+			// document.getElementById('d1').style.backgroundColor=pink
+			document.getElementById('d1').style.backgroundColor='pink';
+		}
+		function ot()
+		{
+			// document.getElementById('d1').style.backgroundColor=pink
+			document.getElementById('d1').style.backgroundColor='orange';
+		}
+
+			document.getElementById('box').style.backgroundColor="yellow"
+	</script>
+
+</body>
+</html>

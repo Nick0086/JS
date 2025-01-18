@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>javascript selector</title>
+</head>
+
+<body>
+
+
+     <h1 id="head1">heading</h1>
+
+     <ul>
+          <li class="list">1</li>
+          <li class="list">2</li>
+          <li class="list">3</li>
+          <li class="list">4</li>
+          <li class="list">5</li>
+     </ul>
+
+     <script>
+
+          // var l = document.getElementsByClassName('list')
+          var l = document.getElementsByTagName('list')
+
+          // alert(l[0].innerHTML)
+
+          // l[0].style.color="red"
+
+          for (i = 0; i < l.length; i++) {
+               l[i].style.color = "blue"
+          }
+
+     </script>
+</body>
+
+</html>

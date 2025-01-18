@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>light bulb</title>
+
+     <style>
+          body {
+               text-align: center;
+          }
+
+          img {
+               width: 200px;
+          }
+
+          button {
+               padding: 5px;
+               width: 150px;
+               border: 1px solid;
+               margin-top: 20px;
+               background-color: aquamarine;
+               font-weight: bold;
+               cursor: pointer;
+          }
+     </style>
+
+</head>
+
+<body>
+
+     <div><img src="off.png" id="bulb-img"></div>
+
+     <hr>
+
+     <button onclick='on()'>ON</button>
+     <button onclick='off()'>OFF</button>
+
+
+     <hr size="10" color="#000">
+
+
+     <img id="img" src="off.png">
+
+     <hr>
+
+     <button onclick='clickfun()'>BUTTON</button>
+
+     <script>
+          function on() {
+               // document.getElementById('bulb-img');
+               document.getElementById('bulb-img').src = 'on.png';
+
+          }
+          function off() {
+               // document.getElementById('bulb-img');
+               document.getElementById('bulb-img').src = 'off.png';
+
+          }
+
+          var check = true;
+
+          function clickfun() {
+               if (check) {
+                    check = false;
+                    document.getElementsByTagName('button').innerHTML = 'OFF';
+                    document.getElementById('img').src = 'on.png';
+               }
+               else {
+                    document.getElementById('img').src = 'off.png';
+                    document.getElementsByTagName('button').innerHTML = 'ON';
+                    check = true;
+               }
+          }
+     </script>
+
+
+</body>
+
+</html>

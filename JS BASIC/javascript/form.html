@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Form Validation</title>
+</head>
+
+<body>
+
+     <form id="" onsubmit="return form_val()" method="post">
+          Name :- <input type="text" placeholder="Enter Name" id="name">
+
+          <br>
+          username :- <input type="text" id="user" placeholder="enter or username">
+          <br>
+
+          Password :- <input type="password" placeholder="Enter Password" id="paw">
+
+          <br>
+
+          Gender:- <input type="radio" name="gen">Male <input type="radio" name="gen"> Female
+
+          <br>
+
+          Address :- <textarea name="" id="add" placeholder="enter address" rows="3"></textarea>
+
+          <br>
+          City :- <select name="" id="city">
+               <option value="">-- select city --</option>
+               <option value="surat">surat</option>
+               <option value="rajkot">rajkot</option>
+               <option value="bharuch">bharuch</option>
+               <option value="bhuva">bhuva</option>
+               <option value="vapi">vapi</option>
+               <option value="valsad">valsad</option>
+          </select>
+
+          <br>
+
+          Email :- <input type="email" id="email">
+
+          <br>
+          Mobile :- <input type="text" pattern="[0-9]{10}" id="number"  maxlength="10">
+
+          <br>
+          <input type="submit">
+     </form>
+     <script>
+
+          function form_val() {
+               var name = document.getElementById('name').value;
+               if (name == "") {
+                    alert('Enter Fullname :');
+                    return false;
+               }
+               var username = document.getElementById('user').value
+               if (username == '') {
+                    alert('enter or username :')
+                    return false
+               }
+               var password = document.getElementById('paw').value;
+               if (password == '') {
+                    alert('enter password :')
+                    return false
+               }
+               var address = document.getElementById('add').value;
+               if (address == '') {
+                    alert('enter address :')
+                    return false
+               }
+               var city = document.getElementById('city').value;
+               if (city == '') {
+                    alert('select city :')
+                    return false
+               }
+
+               var email = document.getElementById('email').value
+               if (email == '') {
+                    alert('enter email :')
+                    return false
+               }
+               // var p1 = /^(\+\d{1,3}[- ]?)?\d{10}$/;
+               var number = document.getElementById('number').value;
+               if (number == '') {
+                    alert('enter number :')
+                    return false
+               }
+          }
+     </script>
+</body>
+
+</html>

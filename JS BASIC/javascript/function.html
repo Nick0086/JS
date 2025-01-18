@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Function in Javascript</title>
+</head>
+
+<body>
+
+
+     <Script>
+
+
+          var city = ('Function String abc')
+
+          document.write(city);
+          document.write("<br>" ,city.big());
+          document.write("<br>" ,city.small());
+          document.write("<br>" ,city.italics());
+          document.write("<br>" ,city.italics());
+          document.write("<br>" ,city.strike());
+          document.write("<br>" ,city.fontcolor("blue"));
+          document.write("<br>" ,city.fontsize(5));
+          document.write("<br>" ,city.link("https://www.google.com/"));
+          document.write("<br>" ,city.length);
+          document.write("<br>" ,city.charAt('4'));
+          document.write("<br>" ,city.indexOf('String'));
+          document.write("<br>" ,city.lastIndexOf('abc'));
+          document.write("<br>" ,city.match('String'));
+          document.write("<br>" ,city.replace('String', 'all char'));
+          document.write("<br>" ,city.search('r'));
+          document.write("<br>" ,city.slice(1, 11));
+          document.write("<br>" ,city.substr(1, 15));
+          document.write("<br>" ,city.substring(1, 14));
+          document.write("<br>" ,city.toLowerCase());
+          document.write("<br>" ,city.toLocaleUpperCase());
+
+          var city1 = "good morning";
+          document.write("<br>" ,city.concat( city1));
+
+
+          document.write("<br><br>")
+          // // math function
+
+          var str = "hello... goodmorning";
+
+          document.write("<br><br>" ,Math.abs(-3));
+          document.write("<br>" ,Math.ceil(3.60));
+          document.write("<br>" ,Math.floor(3.60));
+          document.write("<br>" ,Math.pow(3, 3));
+          document.write("<br>" ,Math.random());
+          document.write("<br>" ,Math.max(20, 21, 23, 19));
+          document.write("<br>" ,Math.min(20, 21, 23, 19));
+          document.write("<br>" ,Math.round(22.25));
+          document.write("<br>" ,Math.round(22.77));
+
+          
+          document.write("<br><br>")
+          // date function 
+
+          var d = new Date();
+
+          document.write("<br>", d)
+          document.write("<br>", d.getDate())
+          document.write("<br>", d.getMonth())
+          document.write("<br>", d.getFullYear())
+          document.write("<br>", d.getHours())
+          document.write("<br>", d.getMinutes())
+          document.write("<br>", d.getSeconds())
+          document.write("<br>", d.getMilliseconds())
+          document.write("<br>", d.getTime())
+
+          d.setDate('21')
+          document.write('<br>' + d)
+
+          d.setMonth('3')
+          document.write('<br>' + d)
+
+          d.setFullYear('2202')
+          document.write('<br>' + d)
+
+          d.setHours('13')
+          document.write('<br>' + d)
+
+          d.setMinutes(36)
+          document.write('<br>' + d)
+
+          d.setSeconds('45')
+          document.write('<br>' + d)
+
+
+          document.write("<br><br>")
+          // array function
+
+          var car = ['honda', 'toyota', 'kia', 'ford', 'audi' , 'BMW', 'volkswagen'];
+          var frute = ['apple', 'banana', 'mengo', 'grape'];
+
+
+          document.write(car[2])
+          document.write('<br>', car)
+          document.write('<br>', car.concat(frute))
+          document.write('<br>', car.join('-'))
+
+
+          car.pop()
+          document.write('<br>', car)
+
+          car.push('jeep')
+          document.write('<br>', car)
+          document.write('<br>', car.reverse())
+
+          car.shift()
+          document.write('<br>', car)
+          document.write('<br>', car.sort())
+          document.write('<br>', car.length)
+     </Script>
+
+</body>
+
+</html>

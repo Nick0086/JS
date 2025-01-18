@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+
+<body>
+
+    <script>
+
+        // singleton in objects
+
+        // if we create objects with constructore than it is singleton
+
+        // if we create objects with literals than it not singleton
+
+        // constructore and literals is type by which we declare our objects
+
+        // Object Literals Topiec
+
+        const jsUser = {
+            name: "nikunj",
+            "Full Name": "nikunj Kalthiya",
+            age: 20,
+            email: 'nikunj@gmail.com',
+            hobbies: ['coding', 'reading'],
+            isStudent: true,
+        }
+
+        // how we access object value
+        // console.log(jsUser.age);
+        // console.log(jsUser["Full Name"]);
+
+        // this is wrong way for access
+        // console.log(jsUser."Full Name");
+
+        // how to declared symbloe in objects
+
+        const mysymbol = Symbol("key1")
+
+        const jsUser2 = {
+            name: "nikunj",
+            "Full Name": "nikunj Kalthiya",
+
+            // this is wrong way to declared Symbol
+
+            // mysymbol : "newkey"
+
+            // this right way
+
+            [mysymbol]: "newkey",
+            age: 20,
+            email: 'nikunj@gmail.com',
+            hobbies: ['coding', 'reading'],
+            isStudent: true,
+        }
+
+        // this only way to get symbol form objects
+        // console.log(jsUser2[mysymbol]);
+        // console.log(typeof jsUser2[mysymbol]);
+
+
+        // ======================
+        // use freeze of object
+
+        jsUser.age = 30;
+        // console.log(jsUser)
+
+        // After this line we freeze objects and After what change we do in our objects is not apply
+        // Object.freeze(jsUser)
+
+        jsUser.age = 40;
+        // console.log(jsUser)
+
+        // use function in objects
+
+        jsUser.greeting = function () {
+            console.log("hello js users")
+        }
+
+        jsUser.greeting2 = function () {
+            console.log(`hello js user ${this.name}. your age id${this.age}`)
+        }
+
+        // console.log(jsUser.greeting())
+        // console.log(jsUser.greeting2())
+
+
+
+
+        // Object singleton/constructor Topiec
+
+        const onjectConst = new Object();
+
+        onjectConst.id = "1";
+        onjectConst.name = "Nk"
+
+        // console.log(onjectConst)
+
+
+
+        // nestead objects
+
+
+        // const nestedObjects = {
+        //     fullname : {
+        //         userName : {
+        //             firstName : "nikunj",
+        //             lastName : "Kalathiya"
+        //         }
+        //     }
+        // }
+
+        // console.log(nestedObjects.fullname.userName)
+
+        // =============================================
+        // combine two or more objects
+
+        const obj1 = {
+            1: 'a',
+            2: 'b'
+        }
+
+        const onj2 = {
+            3: 'c',
+            4: 'd'
+        }
+        // this is wrong way
+        // const onj3 = {obj1 , onj2}
+
+        // right way
+        const obj3 = Object.assign({}, obj1, onj2)
+
+        console.log(obj3);
+
+        // combine two or more objects with spread(...)
+
+        console.log("with spread");
+
+        const obj4 = { ...obj1, ...onj2 }
+
+        console.log(obj4);
+
+
+        // ============================================================
+
+        const jsUser3 = {
+            name: "nikunj",
+            "Full Name": "nikunj Kalthiya",
+            age: 20,
+            email: 'nikunj@gmail.com',
+            hobbies: ['coding', 'reading'],
+            isStudent: true,
+        }
+
+        // by this we get all keys in our objects
+        console.log(Object.keys(jsUser3))
+
+        // by this we get all value in our objects
+        console.log(Object.values(jsUser3))
+
+        // by this we creat Array for all key and value paries
+        console.log(Object.entries(jsUser3))
+
+        // by this we check that object contain any propert of this name
+
+        console.log(jsUser3.hasOwnProperty("nam"))
+        console.log(jsUser3.hasOwnProperty("age"))
+
+    </script>
+
+</body>
+
+</html>

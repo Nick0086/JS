@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>onclick button javascript</title>
+
+     <style>
+          .pd {
+               margin: 10px 0;
+          }
+
+          .pdd {
+               margin-left: 20px;
+          }
+     </style>
+
+     <!--one button click to only one display shape -->
+
+
+     <button onclick="sq()">square</button>
+     <div id="square" class="pd"></div>
+
+
+     <button onclick="rect()">rectangle</button>
+     <div id="rectangle" class="pd"></div>
+
+     <button onclick="round()">circle</button>
+     <div id="round" class="pd"></div>
+
+     <button onclick="Trapezoid()">Trapezoid</button>
+     <div id="Trapezoid" class="pd"></div>
+
+     <button onclick="Parallelogram()">Parallelogram</button>
+     <div id="Parallelogram" class="pd pdd"></div>
+
+     <button onclick="Triangle()">Triangle</button>
+     <div id="Triangle" class="pd"></div>
+
+     <button onclick="TriangleDown()">TriangleDown</button>
+     <div id="TriangleDown" class="pd"></div>
+
+     <button onclick="TriangleLeft()">TriangleLeft</button>
+     <div id="TriangleLeft" class="pd"></div>
+
+     <button onclick="Oval()">Oval</button>
+     <div id="Oval" class="pd"></div>
+
+     <button onclick="longOval()">longOval</button>
+     <div id="longOval" class="pd"></div>
+     <script>
+          function sq() {
+               // alert()
+
+               document.getElementById('square').style.height = "100px";
+               document.getElementById('square').style.width = "100px";
+               document.getElementById('square').style.backgroundColor = "#00cdac";
+          }
+
+          function rect() {
+               // alert()
+               document.getElementById('rectangle').style.width = "250px";
+               document.getElementById('rectangle').style.height = "100px";
+               document.getElementById('rectangle').style.backgroundColor = "#00cdac";
+          }
+
+          function round() {
+               document.getElementById('round').style.height = "100px"
+               document.getElementById('round').style.width = "100px"
+               document.getElementById('round').style.borderRadius = "50%"
+               document.getElementById('round').style.backgroundColor = "#00cddf"
+          }
+
+          function Trapezoid() {
+               document.getElementById('Trapezoid').style.borderBottom = " 50px solid #555";
+               document.getElementById('Trapezoid').style.borderLeft = " 0px solid transparent";
+               document.getElementById('Trapezoid').style.borderRight = " 25px solid transparent";
+               document.getElementById('Trapezoid').style.height = "0"
+               document.getElementById('Trapezoid').style.width = "125px"
+          }
+
+          function Parallelogram() {
+               document.getElementById('Parallelogram').style.width = "100px"
+               document.getElementById('Parallelogram').style.height = "50px"
+               document.getElementById('Parallelogram').style.transform = "skew(20deg)"
+               document.getElementById('Parallelogram').style.backgroundColor = "#F08080"
+          }
+
+          function Triangle() {
+               document.getElementById('Triangle').style.width = "0"
+               document.getElementById('Triangle').style.height = "0"
+               document.getElementById('Triangle').style.borderLeft = "25px solid transparent";
+               document.getElementById('Triangle').style.borderRight = "25px solid transparent";
+               document.getElementById('Triangle').style.borderBottom = "50px solid #555";
+          }
+
+          function TriangleDown() {
+               document.getElementById('TriangleDown').style.width = "0"
+               document.getElementById('TriangleDown').style.height = "0"
+               document.getElementById('TriangleDown').style.borderLeft = "25px solid transparent";
+               document.getElementById('TriangleDown').style.borderRight = "25px solid transparent";
+               document.getElementById('TriangleDown').style.borderTop = "50px solid red";
+          }
+
+          function TriangleLeft() {
+               document.getElementById('TriangleLeft').style.width = "0"
+               document.getElementById('TriangleLeft').style.height = "0"
+               document.getElementById('TriangleLeft').style.borderTop = "25px solid transparent";
+               document.getElementById('TriangleLeft').style.borderRight = "50px solid red";
+               document.getElementById('TriangleLeft').style.borderBottom = "25px solid transparent";
+          }
+
+          function Oval() {
+               document.getElementById('Oval').style.width = "100px"
+               document.getElementById('Oval').style.height = "50px"
+               document.getElementById('Oval').style.borderRadius = "50px"
+               document.getElementById('Oval').style.backgroundColor = "#008B8B"
+          }
+
+          function longOval() {
+               document.getElementById('longOval').style.width = "50px"
+               document.getElementById('longOval').style.height = "100px"
+               document.getElementById('longOval').style.borderRadius = "50px"
+               document.getElementById('longOval').style.backgroundColor = "#008B8B"
+          }
+     </script>
+     <hR size="10" color="#777">
+
+     <!--multi button click to display shape -->
+
+     <button onclick="sq1()">square</button>
+     <button onclick="rect1()">rectangle</button>
+     <button onclick="round1()">circle</button>
+     <button onclick="Trapezoid1()">Trapezoid</button>
+     <button onclick="Parallelogram1()">Parallelogram</button>
+     <button onclick="Triangle1()">TriangleUp</button>
+     <button onclick="TriangleDown1()">TriangleDown</button>
+     <button onclick="TriangleRight1()">TriangleRight</button>
+     <button onclick="Oval1()">Oval</button>
+     <button onclick="longOval1()">longOval</button>
+
+
+
+     <div id="display" style="margin-top: 50px;"></div>
+
+     <script>
+          function sq1() {
+               document.getElementById('display').style.height = "100px";
+               document.getElementById('display').style.width = "100px";
+               document.getElementById('display').style.backgroundColor = "#00cdac";
+               document.getElementById('display').style.borderRadius = "0";
+               document.getElementById('display').style.borderLeft = "0";
+               document.getElementById('display').style.borderRight = "0";
+               document.getElementById('display').style.transform = "skew(0deg)";
+               document.getElementById('display').style.borderWidth = "0";
+
+
+          }
+
+          function rect1() {
+               document.getElementById('display').style.width = "200px";
+               document.getElementById('display').style.height = "100px";
+               document.getElementById('display').style.backgroundColor = "#00cdac";
+               document.getElementById('display').style.borderRadius = "0";
+               document.getElementById('display').style.borderBottom = "0";
+               document.getElementById('display').style.transform = "skew(0deg)";
+               document.getElementById('display').style.borderWidth = "0";
+
+          }
+
+          function round1() {
+               document.getElementById('display').style.height = "100px";
+               document.getElementById('display').style.width = "100px";
+               document.getElementById('display').style.borderRadius = "50%";
+               document.getElementById('display').style.backgroundColor = "#00cddf";
+               document.getElementById('display').style.borderWidth = "0";
+               document.getElementById('display').style.borderBottomStyle = "none";
+               document.getElementById('display').style.transform = "skew(0deg)";
+
+          }
+
+          function Trapezoid1() {
+               document.getElementById('display').style.borderBottom = " 50px solid #555";
+               document.getElementById('display').style.borderLeft = " 25px solid transparent";
+               document.getElementById('display').style.borderRight = " 25px solid transparent";
+               document.getElementById('display').style.height = "0";
+               document.getElementById('display').style.width = "125px";
+               document.getElementById('display').style.borderRadius = "0";
+               document.getElementById('display').style.backgroundColor = "transparent";
+               document.getElementById('display').style.transform = "skew(0deg)";
+
+
+          }
+
+          function Parallelogram1() {
+               document.getElementById('display').style.width = "100px";
+               document.getElementById('display').style.height = "50px";
+               document.getElementById('display').style.transform = "skew(20deg)";
+               document.getElementById('display').style.backgroundColor = "#F08080";
+               document.getElementById('display').style.borderBottom = "0";
+               document.getElementById('display').style.borderWidth = "0";
+               document.getElementById('display').style.borderRadius = "0";
+
+          }
+
+          function Triangle1() {
+               document.getElementById('display').style.width = "0"
+               document.getElementById('display').style.height = "0"
+               document.getElementById('display').style.borderLeft = "75px solid transparent";
+               document.getElementById('display').style.borderRight = "75px solid transparent";
+               document.getElementById('display').style.borderBottom = "100px solid #555";
+               document.getElementById('display').style.backgroundColor = "transparent";
+               document.getElementById('display').style.transform = "skew(0deg)";
+               document.getElementById('display').style.borderTop = "0";
+               document.getElementById('display').style.borderRadius = "0";
+
+          }
+
+          function TriangleDown1() {
+               document.getElementById('display').style.width = "0"
+               document.getElementById('display').style.height = "0"
+               document.getElementById('display').style.borderLeft = "75px solid transparent";
+               document.getElementById('display').style.borderRight = "75px solid transparent";
+               document.getElementById('display').style.borderTop = "100px solid red";
+               document.getElementById('display').style.borderBottom = "0";
+               document.getElementById('display').style.backgroundColor = "transparent";
+               document.getElementById('display').style.transform = "skew(0deg)";
+               document.getElementById('display').style.borderRadius = "0";
+          }
+
+          
+          function TriangleRight1(){
+               document.getElementById('display').style.width = "0";
+               document.getElementById('display').style.height = "0";
+               document.getElementById('display').style.borderTop = "75px solid transparent";
+               document.getElementById('display').style.borderLeft = "100px solid blue";
+               document.getElementById('display').style.borderBottom = "57px solid transparent";
+               document.getElementById('display').style.borderRight = "0";
+               document.getElementById('display').style.backgroundColor = "transparent";
+               document.getElementById('display').style.transform = "skew(0deg)";
+               document.getElementById('display').style.borderRadius = "0";
+          }
+          // width: 0;
+          // height: 0;
+          // border - top: 50px solid transparent;
+          // border - left: 100px solid red;
+          // border - bottom: 50px solid transparent;
+          function Oval1() {
+               document.getElementById('display').style.width = "150px"
+               document.getElementById('display').style.height = "75px"
+               document.getElementById('display').style.borderRadius = "50px"
+               document.getElementById('display').style.backgroundColor = "#008B8B"
+               document.getElementById('display').style.borderWidth = "0"
+          }
+
+          function longOval1() {
+               document.getElementById('display').style.width = "75px"
+               document.getElementById('display').style.height = "150px"
+               document.getElementById('display').style.borderRadius = "50px"
+               document.getElementById('display').style.backgroundColor = "#008B8B"
+               document.getElementById('display').style.borderWidth = "0"
+
+          }
+     </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

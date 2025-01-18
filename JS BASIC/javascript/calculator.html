@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0
+			box-sizing: border-box;
+			background-color: #ADD8E6;
+		}
+		.calculator
+		{
+			width: 400px;
+			margin: 30px auto;
+			padding: 10px;
+/*			background: aliceblue;*/
+			border-radius: 8px;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+			transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+		}
+		.screen input
+		{
+			width: 100%;
+			height: 80px;
+			border: none;
+			background: #111;
+			color: white;
+			padding: 10px;
+			font-size: 20px;
+		}
+		.button
+		{
+			display: flex;
+		}
+		.button input
+		{
+			margin: 5px;
+			flex-grow: 1;
+			height: 80px;
+			width: 80px;
+			font-size: 24px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="calculator">
+		<div class="screen">
+			<input type="text" name="" placeholder="Enter Click Button......." id="display" disabled>
+		</div>
+
+		<div class="button">
+			<input type="button" name="" value="Clear" onclick="calc('C')">
+			<input type="button" name="" value="Back" onclick="rem('.')">
+			<!-- <input type="button" name="" value="√" onclick="rem1('√')"> -->
+			<input type="button" name="" value="/" onclick="calc('/')">
+		</div>
+		<div class="button">
+			<input type="button" name="" value="1" onclick="calc('1')">
+			<input type="button" name="" value="2" onclick="calc('2')">
+			<input type="button" name="" value="3" onclick="calc('3')">
+			<input type="button" name="" value="*" onclick="calc('*')">
+		</div>
+		<div class="button">
+			<input type="button" name="" value="4" onclick="calc('4')">
+			<input type="button" name="" value="5" onclick="calc('5')">
+			<input type="button" name="" value="6" onclick="calc('6')">
+			<input type="button" name="" value="-" onclick="calc('-')">
+		</div>
+		<div class="button">
+			<input type="button" name="" value="7" onclick="calc('7')">
+			<input type="button" name="" value="8" onclick="calc('8')">
+			<input type="button" name="" value="9" onclick="calc('9')">
+			<input type="button" name="" value="+" onclick="calc('+')">
+		</div>
+		<div class="button">
+			<input type="button" name="" value="0" onclick="calc('0')">
+			<input type="button" name="" value="." onclick="calc('.')">
+			<input type="button" name="" value="00" onclick="calc('00')">
+			<input type="button" name="" value="=" onclick="ans()">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function calc(s)
+		{
+			document.getElementById('display').value+=s;
+			if(s=="C")
+			{
+				document.getElementById('display').value='';
+			}
+		}
+		function ans()
+		{
+			var res = document.getElementById('display').value;
+
+			document.getElementById('display').value = eval(res);
+		}
+		function rem()
+		{
+			var val = document.getElementById('display').value;
+
+			// alert(val)
+			back = val.substr(0,(val.length-1));
+			// alert(back)
+			document.getElementById('display').value=back;
+		}
+	</script>
+
+</body>
+</html>

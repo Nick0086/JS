@@ -1,0 +1,56 @@
+<script>
+    function flattenObject(obj, prefix = '') {
+        let flatObject = {};
+
+        for (let key in obj) {
+            if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
+                Object.assign(
+                    flatObject,
+                    flattenObject(obj[key], `${prefix}${key}.`)
+                );
+            } else if (Array.isArray(obj[key])) {
+                obj[key].forEach((item, index) => {
+                    Object.assign(
+                        flatObject,
+                        flattenObject(item, `${prefix}${key}.${index}.`)
+                    );
+                });
+            } else {
+                flatObject[`${prefix}${key}`] = obj[key];
+            }
+        }
+        return flatObject;
+    };
+
+    let obj = {
+        name: "John",
+        age: 30,
+        city: "New York",
+        friend:
+        {
+            name: "Jane", age: 25, list: [
+                {
+                    name: "Alice", hobby: [
+                        {
+                            name: "hello", des: [
+                                {
+                                    name: "nk"
+                                }
+
+                            ]
+                        }   
+                    ]
+                },
+                { name: "Bob" }
+            ]
+        },
+
+        isMarried: false,
+    };
+
+    let newobj = flattenObject(obj);
+
+    console.log(newobj);
+
+
+</script>
